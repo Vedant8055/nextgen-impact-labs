@@ -70,6 +70,26 @@ body.kids-playful .site-header{
   background:linear-gradient(180deg,rgba(224,246,236,.97),rgba(208,240,228,.94));
   border-bottom:3px solid rgba(60,179,113,.28);
   border-radius:0 0 28px 28px;
+  min-height:124px;
+  height:auto;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+body.kids-playful .brand{
+  min-width:0;
+  gap:0;
+}
+body.kids-playful .brand-logo{
+  display:block;
+  width:min(220px,42vw);
+  height:auto;
+  object-fit:contain;
+}
+body.kids-playful .brand-footer .brand-logo{
+  width:min(200px,70%);
+  background:#fff;
+  border-radius:16px;
+  padding:8px 10px;
 }
 body.kids-playful .mobile-menu{background:rgba(220,244,234,.97)}
 body.kids-playful .nav-cta{
@@ -77,15 +97,37 @@ body.kids-playful .nav-cta{
   color:#243447;
   border-radius:999px;
   box-shadow:0 10px 22px rgba(255,138,76,.28);
+  font-family:var(--display);
+  font-size:18px;
+  font-weight:700;
+  padding:16px 26px;
 }
-body.kids-playful .nav-cta span{color:#243447}
+body.kids-playful .nav-cta span{color:#243447;font-size:20px}
 body.kids-playful .nav-cta:hover{background:linear-gradient(120deg,#4ECDC4,#3B82F6);color:#fff}
 body.kids-playful .nav-cta:hover span{color:#fff}
-body.kids-playful .desktop-nav a{color:#31506b}
+body.kids-playful .desktop-nav{
+  gap:clamp(10px,1.4vw,22px);
+  align-items:center;
+}
+body.kids-playful .desktop-nav a{
+  color:#31506b;
+  font-family:var(--display);
+  font-size:clamp(17px,1.45vw,21px);
+  font-weight:700;
+  padding:14px 20px;
+  line-height:1.15;
+}
 body.kids-playful .desktop-nav a:before{background:linear-gradient(90deg,#FF8A4C,#F6E05E 48%,#4ECDC4);box-shadow:0 8px 18px rgba(255,138,76,.22)}
 body.kids-playful .desktop-nav a:hover,
 body.kids-playful .desktop-nav a:focus-visible,
 body.kids-playful .desktop-nav a.is-active{color:#243447}
+@media(max-width:1400px) and (min-width:851px){
+  body.kids-playful .desktop-nav a{
+    font-size:clamp(16px,1.5vw,20px);
+    padding:13px 16px;
+  }
+  body.kids-playful .nav-cta{font-size:17px;padding:14px 22px}
+}
 
 /* Hero */
 body.kids-playful .hero{
