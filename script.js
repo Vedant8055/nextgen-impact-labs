@@ -92,6 +92,16 @@ const pillarDetails = {
     kicker: 'IDEA EXPLORER · WELLBEING', title: 'Knowledge that supports wellbeing',
     body: 'A possible focus on clear, age-appropriate information about health, hygiene, inclusion and everyday wellbeing, delivered with qualified and responsible partners where required.',
     tags: ['Health information', 'Hygiene awareness', 'Inclusion', 'Community support']
+  },
+  community: {
+    kicker: 'IDEA EXPLORER · COMMUNITY', title: 'Learning together with local communities',
+    body: 'A possible focus on connecting young people with local mentors, neighbourhood partners and community voices so ideas are shaped through listening, collaboration and shared responsibility.',
+    tags: ['Community listening', 'Local partnerships', 'Shared learning', 'Youth voice']
+  },
+  mentorship: {
+    kicker: 'IDEA EXPLORER · MENTORSHIP', title: 'Guided paths for young changemakers',
+    body: 'A possible focus on pairing curiosity with responsible adult guidance, peer learning and mentorship so young people can explore challenges thoughtfully and safely.',
+    tags: ['Mentorship', 'Guided exploration', 'Peer learning', 'Safeguarding']
   }
 };
 const modal = $('#infoModal');

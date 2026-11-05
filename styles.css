@@ -168,17 +168,77 @@ body.kids-playful .button-gradient{
   box-shadow:0 14px 28px rgba(255,138,76,.35);
 }
 body.kids-playful .button-gradient span{color:#243447}
-body.kids-playful .text-play{color:#fff}
-body.kids-playful .play-circle{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.65)}
-body.kids-playful .hero-note{background:rgba(255,255,255,.18);border:2px dashed rgba(255,255,255,.5);border-radius:28px;padding:18px 24px;font-size:17px;max-width:460px}
-body.kids-playful .hero-note .note-icon{width:46px;height:46px;border-radius:16px;font-size:24px;background:rgba(246,224,94,.22);color:#F6E05E}
+body.kids-playful .hero-copy{max-width:640px}
+body.kids-playful .button-gradient{
+  flex:0 0 auto;
+  padding:16px 26px;
+  font-size:19px;
+  white-space:nowrap;
+}
+body.kids-playful .text-play{
+  color:#fff;
+  white-space:nowrap;
+  flex:0 0 auto;
+  font-size:20px;
+  gap:12px;
+}
+body.kids-playful .play-circle{
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.65);
+  width:42px;
+  height:42px;
+  font-size:14px;
+}
+body.kids-playful .hero-actions{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:22px 28px;
+  margin-top:32px;
+  width:100%;
+}
+body.kids-playful .hero-note{
+  background:rgba(255,255,255,.18)!important;
+  border:2px dashed rgba(255,255,255,.5)!important;
+  border-radius:999px!important;
+  padding:12px 20px 12px 12px!important;
+  font-size:16px!important;
+  line-height:1.25!important;
+  max-width:none!important;
+  margin:0!important;
+  margin-top:0!important;
+  display:inline-flex!important;
+  align-items:center;
+  gap:12px;
+  flex:0 1 auto;
+  white-space:nowrap;
+  color:#fff!important;
+}
+body.kids-playful .hero-note .note-icon{
+  width:40px;height:40px;border-radius:50%;font-size:20px;
+  background:rgba(246,224,94,.22);color:#F6E05E;
+  display:grid;place-items:center;flex-shrink:0;
+}
+@media(max-width:900px){
+  body.kids-playful .hero-actions{flex-wrap:wrap}
+}
+@media(max-width:560px){
+  body.kids-playful .hero-note{
+    white-space:normal;
+    border-radius:22px!important;
+    width:100%;
+  }
+}
 body.kids-playful .cloud-frame{
   border-radius:58% 42% 48% 52% / 48% 55% 45% 52%;
   overflow:hidden;
   box-shadow:0 24px 50px rgba(36,52,71,.28);
   border:6px solid rgba(255,255,255,.55);
 }
-body.kids-playful .hero-photo-wrap{border-radius:58% 42% 48% 52% / 48% 55% 45% 52%}
+body.kids-playful .hero-photo-wrap,
+body.kids-playful .cloud-frame{
+  border-radius:50%;
+}
 body.kids-playful .hero-sticker{
   background:#fff;
   color:#243447;
@@ -344,27 +404,27 @@ body.kids-playful .founder-card{
   isolation:isolate;
   overflow:hidden;
 }
-/* Ambient lighting — peach for Kiyansh, teal for Yuvaan */
+/* Logo colors: Gen orange (#FF8A4C) for Kiyansh, Next navy blue for Yuvaan */
 body.kids-playful .founder-one{
-  border-color:rgba(255,209,102,.65);
+  border-color:rgba(255,138,76,.55);
   background:
-    radial-gradient(ellipse 80% 70% at 0% 0%,rgba(255,138,76,.5) 0%,rgba(255,138,76,.22) 32%,transparent 68%),
-    radial-gradient(ellipse 70% 60% at 100% 100%,rgba(255,209,102,.55) 0%,rgba(255,180,140,.28) 40%,transparent 70%),
-    linear-gradient(155deg,#FFF8F0 0%,#FFE8D4 45%,#FFD9B8 100%);
+    radial-gradient(ellipse 80% 70% at 100% 0%,rgba(255,138,76,.55) 0%,rgba(255,138,76,.22) 34%,transparent 68%),
+    radial-gradient(ellipse 70% 60% at 0% 100%,rgba(255,209,102,.4) 0%,rgba(255,138,76,.2) 42%,transparent 70%),
+    linear-gradient(155deg,#FFF8F0 0%,#FFE4D0 45%,#FFD0B0 100%);
 }
 body.kids-playful .founder-two{
-  border-color:rgba(78,205,196,.65);
+  border-color:rgba(30,58,110,.35);
   background:
-    radial-gradient(ellipse 80% 70% at 100% 0%,rgba(78,205,196,.48) 0%,rgba(59,130,246,.2) 34%,transparent 68%),
-    radial-gradient(ellipse 70% 60% at 0% 100%,rgba(78,205,196,.42) 0%,rgba(167,139,250,.18) 42%,transparent 70%),
-    linear-gradient(155deg,#F0FFFC 0%,#D9F7F2 45%,#C8F0EA 100%);
+    radial-gradient(ellipse 80% 70% at 0% 0%,rgba(30,58,110,.45) 0%,rgba(59,96,168,.22) 34%,transparent 68%),
+    radial-gradient(ellipse 70% 60% at 100% 100%,rgba(66,110,180,.35) 0%,rgba(30,58,110,.16) 42%,transparent 70%),
+    linear-gradient(155deg,#EEF3FB 0%,#D8E4F5 45%,#C5D5EC 100%);
 }
 body.kids-playful .founder-monogram.face-block{
   position:relative;width:120px;height:140px;border-radius:28px;
-  background:linear-gradient(160deg,#FF8A4C,#FFD166);display:grid;place-items:center;
+  background:linear-gradient(160deg,#FF8A4C,#FF9F5A);display:grid;place-items:center;
   font-size:0;overflow:hidden;
 }
-body.kids-playful .founder-two .founder-monogram.face-block{background:linear-gradient(160deg,#4ECDC4,#3B82F6)}
+body.kids-playful .founder-two .founder-monogram.face-block{background:linear-gradient(160deg,#1E3A6E,#3B6AB0)}
 body.kids-playful .founder-monogram.face-block b{
   font-family:var(--display);font-size:54px;color:#fff;line-height:1;margin-top:28px;
 }
@@ -373,15 +433,20 @@ body.kids-playful .face-eyes{
   background:radial-gradient(circle at 10px 6px,#243447 4px,transparent 5px),
              radial-gradient(circle at 42px 6px,#243447 4px,transparent 5px);
 }
+body.kids-playful .founder-two .face-eyes{
+  background:radial-gradient(circle at 10px 6px,#fff 4px,transparent 5px),
+             radial-gradient(circle at 42px 6px,#fff 4px,transparent 5px);
+}
 body.kids-playful .face-smile{
   position:absolute;top:48px;left:50%;transform:translateX(-50%);
   width:28px;height:14px;border-bottom:3px solid #243447;border-radius:0 0 20px 20px;
 }
+body.kids-playful .founder-two .face-smile{border-bottom-color:#fff}
 body.kids-playful .founder-details h3{font-family:var(--display)}
 body.kids-playful .founder-tags span{
-  background:#FFF1D6;border:0;border-radius:999px;color:#c45a1f;font-family:var(--display);font-size:14px;padding:8px 12px;
+  background:#FFE8D6;border:0;border-radius:999px;color:#c45a1f;font-family:var(--display);font-size:14px;padding:8px 12px;
 }
-body.kids-playful .founder-two .founder-tags span{background:#E8FFF9;color:#1f7f78}
+body.kids-playful .founder-two .founder-tags span{background:#E4ECF8;color:#1E3A6E}
 body.kids-playful .safeguarding-note{
   background:#fff;border-radius:24px;border:3px dashed #A78BFA;box-shadow:none;
 }
@@ -403,15 +468,66 @@ body.kids-playful .filter-btn{
 body.kids-playful .filter-btn.active,.kids-playful .filter-btn:hover{
   background:linear-gradient(120deg,#FF8A4C,#FFD166);color:#243447;border-color:transparent;
 }
-body.kids-playful .story-card{
-  background:#fff;border-radius:28px;border:3px solid rgba(255,138,76,.12);box-shadow:var(--shadow);
+body.kids-playful .story-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  align-items:stretch;
+  overflow:visible;
+  padding:10px 4px 24px;
 }
+body.kids-playful .story-card{
+  background:#fff;
+  border-radius:28px;
+  border:3px solid rgba(255,138,76,.12);
+  box-shadow:0 14px 28px rgba(36,52,71,.1);
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  grid-row:auto;
+  cursor:pointer;
+  transform-origin:center bottom;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;
+}
+body.kids-playful .story-card:hover{
+  transform:translateY(-14px) scale(1.035);
+  box-shadow:0 28px 50px rgba(36,52,71,.22);
+  border-color:rgba(255,138,76,.45);
+  z-index:3;
+}
+body.kids-playful .story-card:hover .story-image{transform:scale(1.04)}
+body.kids-playful .story-card.story-large{grid-row:auto}
+body.kids-playful .story-card.story-large .story-image{height:165px}
 body.kids-playful .story-card:nth-child(2){border-color:rgba(52,211,153,.35)}
 body.kids-playful .story-card:nth-child(3){border-color:rgba(251,113,133,.35)}
 body.kids-playful .story-card:nth-child(4){border-color:rgba(167,139,250,.4)}
-body.kids-playful .story-image{border-radius:20px}
+body.kids-playful .story-card:nth-child(5){border-color:rgba(59,130,246,.35)}
+body.kids-playful .story-card:nth-child(6){border-color:rgba(255,209,102,.55)}
+body.kids-playful .story-image{
+  border-radius:20px;
+  height:165px;
+  flex-shrink:0;
+  transition:transform .4s ease;
+}
 body.kids-playful .story-card h3{font-family:var(--display)}
+body.kids-playful .story-card p{flex:1}
+@media (prefers-reduced-motion:reduce){
+  body.kids-playful .story-card,
+  body.kids-playful .story-card:hover,
+  body.kids-playful .story-image{transition:none;transform:none}
+}
 body.kids-playful .idea-label{border-radius:999px;background:#FFE8F0;color:#c2415a}
+.story-img-community{background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80')}
+.story-img-mentorship{background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80')}
+.story-img-community.image-fallback,.story-img-mentorship.image-fallback{
+  background-image:radial-gradient(circle at 30% 25%,rgba(255,255,255,.35),transparent 28%),linear-gradient(135deg,#3B82F6,#A78BFA 55%,#FF8A4C)!important;
+}
+@media(max-width:850px){
+  body.kids-playful .story-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  body.kids-playful .story-grid{grid-template-columns:1fr}
+}
 
 /* Transparency stays calmer but softer */
 body.kids-playful .transparency-section{
@@ -487,9 +603,9 @@ body.kids-playful .eyebrow-line{background:linear-gradient(90deg,#FF8A4C,#4ECDC4
 .hero-visual{overflow:visible}
 .hero-cartoon{
   position:absolute;
-  top:4px;
-  right:0;
-  width:min(380px,96%);
+  top:0;
+  right:-8px;
+  width:min(520px,104%);
   z-index:6;
   pointer-events:none;
 }
@@ -510,12 +626,23 @@ body.kids-playful .eyebrow-line{background:linear-gradient(90deg,#FF8A4C,#4ECDC4
   animation:cartoonPop 3.4s ease-in-out infinite;
 }
 .cartoon-bubble span{display:block;color:#FF8A4C;font-size:13px;margin-top:2px}
+.cartoon-bubble-b{
+  left:auto;
+  right:4%;
+  top:8px;
+  border-radius:22px 22px 6px 22px;
+  animation-delay:.8s;
+  font-size:14px;
+  padding:11px 14px;
+}
+.cartoon-bubble-b span{color:#7C3AED;font-size:12px}
 .cartoon-float-a{animation:cartoonFloat 3.6s ease-in-out infinite}
 .cartoon-float-b{animation:cartoonFloat 4.2s ease-in-out infinite .4s}
 .cartoon-float-c{animation:cartoonFloat 3.8s ease-in-out infinite .8s}
 .cartoon-bob{animation:cartoonBob 2.8s ease-in-out infinite}
 .cartoon-wiggle{animation:cartoonWiggle 2.4s ease-in-out infinite}
-.cartoon-spin{transform-origin:265px 156px;animation:cartoonSpin 6s linear infinite}
+.cartoon-spin{transform-origin:183px 156px;animation:cartoonSpin 6s linear infinite}
+.cartoon-spin-b{transform-origin:443px 120px;animation:cartoonSpin 5s linear infinite reverse}
 .cartoon-dash{animation:cartoonDash 2s linear infinite}
 @keyframes cartoonFloat{
   0%,100%{transform:translateY(0)}
@@ -541,21 +668,37 @@ body.kids-playful .eyebrow-line{background:linear-gradient(90deg,#FF8A4C,#4ECDC4
   0%,100%{transform:translateY(0) scale(1)}
   50%{transform:translateY(-6px) scale(1.04)}
 }
-body.kids-playful .hero-inner{align-items:start}
+body.kids-playful .hero-inner{
+  align-items:start;
+  grid-template-columns:0.95fr 1.2fr;
+  gap:5%;
+}
 body.kids-playful .hero-visual{
   height:600px;
+  width:min(560px,100%);
   align-self:start;
+  justify-self:end;
   margin-top:34px; /* line up with "The next" under the eyebrow */
+  margin-left:auto;
 }
-body.kids-playful .hero-photo-wrap{inset:175px -6px 4px -10px}
-body.kids-playful .hero-cartoon{top:2px;right:-6px;width:min(400px,98%)}
-body.kids-playful .sticker-top{top:198px;right:4px}
+/* Horizontal oval again — wider than tall, not squeezed */
+body.kids-playful .hero-photo-wrap{
+  inset:auto 4% 118px 6%; /* raised further toward cartoons */
+  top:auto;
+  height:300px;
+  border-radius:50%;
+  transform:rotate(1.5deg);
+}
+body.kids-playful .hero-cartoon{top:0;right:-12px;width:min(540px,108%)}
+body.kids-playful .sticker-top{top:auto;bottom:250px;right:2%}
 @media(max-width:1150px){
-  body.kids-playful .hero-visual{height:540px}
-  body.kids-playful .hero-photo-wrap{inset:155px -2px 6px -4px}
-  .hero-cartoon{width:290px;top:0;right:0}
-  body.kids-playful .sticker-top{top:175px}
+  body.kids-playful .hero-inner{grid-template-columns:1fr 1fr}
+  body.kids-playful .hero-visual{height:520px;width:min(480px,100%)}
+  body.kids-playful .hero-photo-wrap{height:260px;inset:auto 4% 96px 8%}
+  .hero-cartoon{width:min(420px,100%);top:0;right:-4px}
+  body.kids-playful .sticker-top{bottom:220px}
   .cartoon-bubble{font-size:14px;padding:11px 14px}
+  .cartoon-bubble-b{font-size:12px;padding:9px 12px}
 }
 @media(max-width:850px){
   body.kids-playful .impact-ribbon{margin:14px 3% 0;border-radius:24px}
@@ -566,17 +709,18 @@ body.kids-playful .sticker-top{top:198px;right:4px}
   body.kids-playful .hero-visual{height:440px}
   .hero-photo-wrap{inset:130px 4px 10px 4px}
   body.kids-playful .hero-photo-wrap{inset:130px 4px 10px 4px}
-  .hero-cartoon{width:240px;top:0;right:4px}
+  .hero-cartoon{width:min(340px,100%);top:0;right:0}
   .cartoon-bubble{font-size:12px;padding:9px 12px;left:4px}
+  .cartoon-bubble-b{display:none}
   body.kids-playful .sticker-top{top:148px}
 }
 @media(max-width:560px){
-  .hero-cartoon{width:200px}
+  .hero-cartoon{width:240px}
   .hero-photo-wrap{inset:105px 2px 10px 2px}
   body.kids-playful .hero-photo-wrap{inset:105px 2px 10px 2px}
   body.kids-playful .sticker-top{top:120px}
   .cartoon-bubble{display:none}
 }
 @media (prefers-reduced-motion:reduce){
-  .cartoon-float-a,.cartoon-float-b,.cartoon-float-c,.cartoon-bob,.cartoon-wiggle,.cartoon-spin,.cartoon-dash,.cartoon-bubble{animation:none}
+  .cartoon-float-a,.cartoon-float-b,.cartoon-float-c,.cartoon-bob,.cartoon-wiggle,.cartoon-spin,.cartoon-spin-b,.cartoon-dash,.cartoon-bubble{animation:none}
 }

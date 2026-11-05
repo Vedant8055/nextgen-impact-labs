@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=27" />
+  <link rel="stylesheet" href="styles.css?v=41" />
 </head>
 <body class="kids-playful">
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -47,50 +47,106 @@
           <div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>A YOUTH-LED SOCIAL INNOVATION FORUM</div>
           <h1 id="heroTitle">The next generation<br/>doesn't have to wait<br/>for change<span class="period">.</span><br/><em>It can help create it.</em></h1>
           <p class="hero-lede">A movement of ideas, collaboration and meaningful action for stronger, healthier and more sustainable communities across Nashik and North Maharashtra.</p>
-          <div class="hero-actions"><a class="button button-gradient" href="#our-story">Explore our mission <span>↗</span></a><a class="text-play" href="#impact"><span class="play-circle">▶</span> See how we work</a></div>
-          <div class="hero-note"><span class="note-icon">✳</span><span>Big ideas can start small.<br/><strong>Every voice has a part to play.</strong></span></div>
+          <div class="hero-actions">
+            <a class="button button-gradient" href="#our-story">Explore our mission <span>↗</span></a>
+            <a class="text-play" href="#impact"><span class="play-circle">▶</span> See how we work</a>
+            <div class="hero-note"><span class="note-icon">✳</span><span><strong>Every voice has a part to play.</strong></span></div>
+          </div>
         </div>
         <div class="hero-visual" aria-label="Illustrative visual of connected ideas and community action">
           <div class="hero-cartoon" aria-hidden="true">
-            <svg class="cartoon-scene" viewBox="0 0 320 220" fill="none">
+            <svg class="cartoon-scene" viewBox="0 0 480 240" fill="none">
+              <!-- Arc guide path -->
+              <path class="cartoon-dash" d="M36 168C90 70 170 18 250 22c70 4 130 42 190 110" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9" opacity=".55"/>
+
+              <!-- 1. Orange smile — left of arc -->
               <g class="cartoon-float-a">
-                <rect x="28" y="38" width="78" height="78" rx="24" fill="#FF8A4C"/>
-                <circle cx="52" cy="68" r="6" fill="#fff"/>
-                <circle cx="82" cy="68" r="6" fill="#fff"/>
-                <path d="M50 88c8 12 28 12 36 0" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <rect x="18" y="118" width="72" height="72" rx="22" fill="#FF8A4C"/>
+                <circle cx="40" cy="144" r="5.5" fill="#fff"/>
+                <circle cx="68" cy="144" r="5.5" fill="#fff"/>
+                <path d="M38 162c7 11 25 11 32 0" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
               </g>
+
+              <!-- 2. Teal smile — rising -->
               <g class="cartoon-float-b">
-                <rect x="92" y="92" width="78" height="78" rx="24" fill="#4ECDC4"/>
-                <circle cx="116" cy="122" r="6" fill="#fff"/>
-                <circle cx="146" cy="122" r="6" fill="#fff"/>
-                <path d="M114 142c8 12 28 12 36 0" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <rect x="96" y="58" width="70" height="70" rx="22" fill="#4ECDC4"/>
+                <circle cx="117" cy="84" r="5.2" fill="#fff"/>
+                <circle cx="145" cy="84" r="5.2" fill="#fff"/>
+                <path d="M115 102c7 10 24 10 30 0" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
               </g>
-              <g class="cartoon-float-c">
-                <path d="M210 46c18-22 58-18 64 10 18-4 38 14 28 34-2 28-34 40-58 30-28 18-62-4-52-34 4-20 8-28 18-40Z" fill="#F6E05E"/>
-                <circle cx="236" cy="78" r="5" fill="#243447"/>
-                <circle cx="258" cy="78" r="5" fill="#243447"/>
-                <path d="M236 96c8 10 22 10 30 0" stroke="#243447" stroke-width="4" stroke-linecap="round"/>
-              </g>
-              <g class="cartoon-spin">
-                <path d="M248 148h34v18c0 10-8 18-17 18s-17-8-17-18v-18Z" fill="#A78BFA"/>
-                <path d="M248 148c0-10 8-18 17-18s17 8 17 18H248Z" fill="#7C3AED"/>
-                <rect x="258" y="138" width="14" height="10" rx="3" fill="#FFB4C2"/>
-              </g>
-              <g class="cartoon-bob">
-                <circle cx="196" cy="36" r="16" fill="#FFB4C2"/>
-                <path d="M196 24l3 8 9 1-7 5 2 8-7-4-7 4 2-8-7-5 9-1 3-8Z" fill="#fff"/>
-              </g>
+
+              <!-- Accents near rise -->
               <g class="cartoon-wiggle">
-                <circle cx="54" cy="172" r="14" fill="#3B82F6"/>
-                <path d="M48 172h12M54 166v12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="78" cy="98" r="12" fill="#3B82F6"/>
+                <path d="M72 98h12M78 92v12" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
               </g>
+
+              <!-- 3. Yellow cloud — arc peak -->
+              <g class="cartoon-float-c">
+                <path d="M200 8c16-18 52-16 58 8 16-4 34 12 26 30-2 24-30 36-52 28-24 16-56-2-46-30 2-16 6-24 14-36Z" fill="#F6E05E"/>
+                <circle cx="224" cy="40" r="4.5" fill="#243447"/>
+                <circle cx="244" cy="40" r="4.5" fill="#243447"/>
+                <path d="M224 56c7 9 20 9 26 0" stroke="#243447" stroke-width="3.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Pink star near peak -->
+              <g class="cartoon-bob">
+                <circle cx="178" cy="18" r="14" fill="#FFB4C2"/>
+                <path d="M178 8l2.5 7 7.5.8-5.8 4.4 1.8 7-6-3.6-6 3.6 1.8-7-5.8-4.4 7.5-.8 2.5-7Z" fill="#fff"/>
+              </g>
+
+              <!-- 4. Purple smile — right of peak -->
+              <g class="cartoon-float-b">
+                <rect x="292" y="38" width="68" height="68" rx="20" fill="#A78BFA"/>
+                <circle cx="313" cy="62" r="5" fill="#fff"/>
+                <circle cx="339" cy="62" r="5" fill="#fff"/>
+                <path d="M311 80c6.5 10 23 10 29 0" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              </g>
+
+              <!-- Small yellow + -->
               <g class="cartoon-float-a">
-                <circle cx="290" cy="118" r="10" fill="#FFD166"/>
-                <path d="M286 118h8M290 114v8" stroke="#243447" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="274" cy="88" r="9" fill="#FFD166"/>
+                <path d="M270 88h8M274 84v8" stroke="#243447" stroke-width="2.2" stroke-linecap="round"/>
               </g>
-              <path class="cartoon-dash" d="M170 70c18-8 34 4 42 18" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 8" opacity=".7"/>
+
+              <!-- 5. Soft pink face — descending arc -->
+              <g class="cartoon-bob">
+                <circle cx="392" cy="78" r="26" fill="#FFB4C2"/>
+                <circle cx="382" cy="74" r="4" fill="#243447"/>
+                <circle cx="402" cy="74" r="4" fill="#243447"/>
+                <path d="M382 88c5.5 8 16 8 22 0" stroke="#243447" stroke-width="3.2" stroke-linecap="round"/>
+              </g>
+
+              <!-- Spinning star -->
+              <g class="cartoon-spin-b">
+                <path d="M438 108l4.5 11 12 1.5-9.2 7.2 2.8 11.2-10.1-5.6-10.1 5.6 2.8-11.2-9.2-7.2 12-1.5 4.5-11Z" fill="#FFD166"/>
+              </g>
+
+              <!-- Replaces green creature: clean lightbulb (idea) -->
+              <g class="cartoon-float-c">
+                <path d="M392 148c0-18 14-32 32-32s32 14 32 32c0 12-6 20-14 26v10c0 4-4 8-8 8h-20c-4 0-8-4-8-8v-10c-8-6-14-14-14-26Z" fill="#FFD166"/>
+                <path d="M412 206h24" stroke="#F6E05E" stroke-width="4" stroke-linecap="round"/>
+                <path d="M412 214h24" stroke="#F6E05E" stroke-width="4" stroke-linecap="round"/>
+                <path d="M416 168c4-6 12-10 18-8" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+              </g>
+
+              <!-- Mini orange smile — end of arc -->
+              <g class="cartoon-float-a">
+                <rect x="448" y="168" width="24" height="24" rx="8" fill="#FF8A4C"/>
+                <circle cx="456" cy="176" r="2.2" fill="#fff"/>
+                <circle cx="464" cy="176" r="2.2" fill="#fff"/>
+                <path d="M455 183c2.2 3 7.5 3 9.5 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+              </g>
+
+              <!-- Puzzle piece sits on the curve, not childish blob -->
+              <g class="cartoon-spin">
+                <path d="M168 148h30v16c0 9-7 16-15 16s-15-7-15-16v-16Z" fill="#A78BFA"/>
+                <path d="M168 148c0-9 7-16 15-16s15 7 15 16H168Z" fill="#7C3AED"/>
+                <rect x="176" y="138" width="13" height="9" rx="3" fill="#FFB4C2"/>
+              </g>
             </svg>
             <div class="cartoon-bubble">Big ideas!<span>start here</span></div>
+            <div class="cartoon-bubble cartoon-bubble-b">Let's go!<span>make change</span></div>
           </div>
           <div class="hero-photo-wrap cloud-frame"><div class="hero-photo"></div><div class="photo-shade"></div></div>
           <div class="hero-sticker sticker-top"><span class="sticker-star">✳</span><span>Ideas with<br/><b>purpose</b></span></div>
@@ -169,8 +225,8 @@
     <section class="founders-section section-pad" id="founders">
       <div class="founder-heading reveal"><div class="eyebrow"><span class="eyebrow-line"></span>THE PEOPLE BEHIND THE IDEA</div><h2>Young voices.<br/><span class="text-gradient">A shared vision.</span></h2><p>Meet the young founders whose curiosity and belief in positive change helped shape NEXTGEN IMPACT LABS.</p></div>
       <div class="founder-grid">
-        <article class="founder-card founder-one reveal"><div class="founder-monogram face-block"><span class="face-eyes"></span><span class="face-smile"></span><b>K</b></div><div class="founder-details"><span class="founder-role">YOUTH FOUNDER · AGE 11</span><h3>Kiyansh Kapse</h3><p>Kiyansh is part of a new generation that wants to ask questions, explore social challenges and encourage more young people to think about how they can contribute to their communities.</p><div class="founder-tags"><span>Curiosity</span><span>Ideas</span><span>Leadership</span></div></div><span class="founder-number">01</span></article>
-        <article class="founder-card founder-two reveal"><div class="founder-monogram face-block"><span class="face-eyes"></span><span class="face-smile"></span><b>Y</b></div><div class="founder-details"><span class="founder-role">YOUTH FOUNDER · AGE 8</span><h3>Yuvaan Kedare</h3><p>Yuvaan brings the optimism and imagination of a young changemaker to the initiative, reflecting the belief that learning about social responsibility can start early.</p><div class="founder-tags"><span>Imagination</span><span>Learning</span><span>Possibility</span></div></div><span class="founder-number">02</span></article>
+        <article class="founder-card founder-two reveal"><div class="founder-monogram face-block"><span class="face-eyes"></span><span class="face-smile"></span><b>Y</b></div><div class="founder-details"><span class="founder-role">YOUTH FOUNDER · AGE 8</span><h3>Yuvaan Kedare</h3><p>Yuvaan brings the optimism and imagination of a young changemaker to the initiative, reflecting the belief that learning about social responsibility can start early.</p><div class="founder-tags"><span>Imagination</span><span>Learning</span><span>Possibility</span></div></div><span class="founder-number">01</span></article>
+        <article class="founder-card founder-one reveal"><div class="founder-monogram face-block"><span class="face-eyes"></span><span class="face-smile"></span><b>K</b></div><div class="founder-details"><span class="founder-role">YOUTH FOUNDER · AGE 11</span><h3>Kiyansh Kapse</h3><p>Kiyansh is part of a new generation that wants to ask questions, explore social challenges and encourage more young people to think about how they can contribute to their communities.</p><div class="founder-tags"><span>Curiosity</span><span>Ideas</span><span>Leadership</span></div></div><span class="founder-number">02</span></article>
       </div>
       <div class="safeguarding-note reveal"><span class="safeguarding-icon">✳</span><p><strong>Youth-led. Experience-guided.</strong> As a youth-led initiative, responsible adult support, parental or guardian involvement, mentorship and child safeguarding are essential to how activities should be planned and delivered.</p></div>
     </section>
@@ -184,10 +240,12 @@
       <div class="section-heading reveal"><div><div class="eyebrow"><span class="eyebrow-line"></span>IDEAS IN MOTION</div><h2>Where curiosity<br/><span class="text-gradient">meets action.</span></h2></div><p>A starting library of themes and possible initiatives. As work develops, this space will grow into a record of real projects, community voices and verified learning.</p></div>
       <div class="story-filters reveal" role="group" aria-label="Filter focus themes"><button class="filter-btn active" data-filter="all">All themes</button><button class="filter-btn" data-filter="learning">Learning</button><button class="filter-btn" data-filter="planet">Planet</button><button class="filter-btn" data-filter="wellbeing">Wellbeing</button><button class="filter-btn" data-filter="innovation">Innovation</button></div>
       <div class="story-grid" id="storyGrid">
-        <article class="story-card story-large reveal" data-category="learning"><div class="story-image story-img-learning"></div><div class="story-meta"><span>01 / LEARNING</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Digital confidence for a changing world</h3><p>Exploring how young people can build practical digital skills, curiosity and confidence through learning experiences.</p><button class="story-open" data-story="learning">Explore the idea <span>↗</span></button></article>
+        <article class="story-card reveal" data-category="learning"><div class="story-image story-img-learning"></div><div class="story-meta"><span>01 / LEARNING</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Digital confidence for a changing world</h3><p>Exploring how young people can build practical digital skills, curiosity and confidence through learning experiences.</p><button class="story-open" data-story="learning">Explore the idea <span>↗</span></button></article>
         <article class="story-card reveal" data-category="planet"><div class="story-image story-img-planet"></div><div class="story-meta"><span>02 / PLANET</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Small actions for a healthier planet</h3><p>Making sustainability easier to understand through awareness, everyday habits and community participation.</p><button class="story-open" data-story="planet">Explore the idea <span>↗</span></button></article>
         <article class="story-card reveal" data-category="wellbeing"><div class="story-image story-img-wellbeing"></div><div class="story-meta"><span>03 / WELLBEING</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Knowledge that supports wellbeing</h3><p>Encouraging accessible conversations around health, hygiene, inclusion and informed choices.</p><button class="story-open" data-story="wellbeing">Explore the idea <span>↗</span></button></article>
         <article class="story-card reveal" data-category="innovation"><div class="story-image story-img-innovation"></div><div class="story-meta"><span>04 / INNOVATION</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Young people solving real problems</h3><p>Creating room for questions, prototypes, mentorship and community-centred problem-solving.</p><button class="story-open" data-story="innovation">Explore the idea <span>↗</span></button></article>
+        <article class="story-card reveal" data-category="learning"><div class="story-image story-img-community"></div><div class="story-meta"><span>05 / COMMUNITY</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Learning together with local communities</h3><p>Building bridges between young people, mentors and neighbourhoods so ideas grow through shared listening and action.</p><button class="story-open" data-story="community">Explore the idea <span>↗</span></button></article>
+        <article class="story-card reveal" data-category="innovation"><div class="story-image story-img-mentorship"></div><div class="story-meta"><span>06 / MENTORSHIP</span><span class="idea-label">POSSIBLE FOCUS</span></div><h3>Guided paths for young changemakers</h3><p>Connecting curiosity with experienced guidance so youth can turn questions into thoughtful, responsible next steps.</p><button class="story-open" data-story="mentorship">Explore the idea <span>↗</span></button></article>
       </div>
       <p class="image-disclaimer">Illustrative images are used to convey focus areas; they are not records of NEXTGEN IMPACT LABS activities.</p>
     </section>
@@ -258,6 +316,6 @@
   <div class="modal-backdrop" id="infoModal" aria-hidden="true"><div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" aria-label="Close dialog" id="modalClose">×</button><div class="modal-kicker" id="modalKicker">FOCUS AREA</div><h2 id="modalTitle">Explore this focus</h2><p id="modalBody"></p><div class="modal-list" id="modalList"></div><div class="modal-footer"><span>PROPOSED AREA OF FOCUS</span><button class="button button-dark" id="modalAction">Start a conversation ↗</button></div></div></div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
