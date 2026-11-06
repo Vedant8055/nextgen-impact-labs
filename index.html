@@ -13,15 +13,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=41" />
+  <link rel="stylesheet" href="styles.css?v=86" />
 </head>
 <body class="kids-playful">
   <div class="scroll-progress" id="scrollProgress"></div>
   <div class="announcement"><span class="announcement-dot"></span><span>ROOTED IN NASHIK. THINKING BEYOND BOUNDARIES.</span><a href="#our-story">Discover the idea <span>↗</span></a></div>
 
   <header class="site-header" id="top">
+    <div class="nav-rain" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
     <a class="brand" href="#top" aria-label="NextGen Impact Labs home">
-      <img class="brand-logo" src="logo.jpg" alt="NextGen Impact Labs — Curiosity Meets Change." width="220" height="120" />
+      <img class="brand-logo" src="logo.png?v=2" alt="NextGen Impact Labs — Curiosity Meets Change." width="220" height="120" />
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#our-story">Our Story</a>
@@ -45,7 +52,12 @@
       <div class="hero-inner">
         <div class="hero-copy">
           <div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>A YOUTH-LED SOCIAL INNOVATION FORUM</div>
-          <h1 id="heroTitle">The next generation<br/>doesn't have to wait<br/>for change<span class="period">.</span><br/><em>It can help create it.</em></h1>
+          <h1 id="heroTitle" class="hero-dance">
+            <span class="dance-line" style="--i:0">The next generation</span>
+            <span class="dance-line" style="--i:1">doesn't have to wait</span>
+            <span class="dance-line" style="--i:2">for change<span class="period">.</span></span>
+            <em>It can help create it.</em>
+          </h1>
           <p class="hero-lede">A movement of ideas, collaboration and meaningful action for stronger, healthier and more sustainable communities across Nashik and North Maharashtra.</p>
           <div class="hero-actions">
             <a class="button button-gradient" href="#our-story">Explore our mission <span>↗</span></a>
@@ -161,10 +173,10 @@
 
     <section class="impact-ribbon" id="impact" aria-label="Impact snapshot">
       <div class="ribbon-intro"><span class="live-dot"></span><div><small>OUR IMPACT, IN THE MAKING</small><strong>A commitment to keep learning.</strong></div></div>
-      <div class="metric"><span class="metric-icon">◎</span><div><strong>Baseline</strong><small>People reached</small></div></div>
-      <div class="metric"><span class="metric-icon">↗</span><div><strong>Building</strong><small>Initiatives & programmes</small></div></div>
-      <div class="metric"><span class="metric-icon">✳</span><div><strong>Growing</strong><small>Youth participation</small></div></div>
-      <div class="metric metric-region"><span class="metric-icon">⌖</span><div><strong>North Maharashtra</strong><small>Our focus region</small></div></div>
+      <div class="metric metric-baseline"><span class="metric-icon" aria-hidden="true">👥</span><div><strong>Baseline</strong><small>People reached</small></div></div>
+      <div class="metric metric-building"><span class="metric-icon" aria-hidden="true">🚀</span><div><strong>Building</strong><small>Initiatives & programmes</small></div></div>
+      <div class="metric metric-growing"><span class="metric-icon" aria-hidden="true">🌱</span><div><strong>Growing</strong><small>Youth participation</small></div></div>
+      <div class="metric metric-region"><span class="metric-icon" aria-hidden="true">📍</span><div><strong>North Maharashtra</strong><small>Our focus region</small></div></div>
       <div class="ribbon-status">Verified figures will appear here <span>↗</span></div>
     </section>
 
@@ -211,13 +223,14 @@
     </section>
 
     <section class="approach-section section-pad">
+      <div class="approach-blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="approach-top reveal"><div><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>HOW WE THINK ABOUT CHANGE</div><h2>From a question<br/>to a <em>possibility.</em></h2></div><p>Good intentions become more useful when they are paired with listening, learning, collaboration and reflection.</p></div>
       <div class="process-line">
-        <article class="process-step reveal"><span class="step-no">01</span><span class="step-icon">⌕</span><h3>Observe</h3><p>Listen closely and understand the challenge from the community's point of view.</p></article>
-        <article class="process-step reveal"><span class="step-no">02</span><span class="step-icon">✳</span><h3>Imagine</h3><p>Ask better questions and explore creative, practical possibilities.</p></article>
-        <article class="process-step reveal"><span class="step-no">03</span><span class="step-icon">◎</span><h3>Collaborate</h3><p>Bring young people, mentors, institutions and communities together.</p></article>
-        <article class="process-step reveal"><span class="step-no">04</span><span class="step-icon">↗</span><h3>Act</h3><p>Test ideas through appropriately supported activities and pilot initiatives.</p></article>
-        <article class="process-step reveal"><span class="step-no">05</span><span class="step-icon">⌁</span><h3>Learn</h3><p>Document outcomes, reflect honestly and improve what comes next.</p></article>
+        <article class="process-step step-observe reveal"><span class="step-no">01</span><span class="step-icon" aria-hidden="true">🔍</span><h3>Observe</h3><p>Listen closely and understand the challenge from the community's point of view.</p></article>
+        <article class="process-step step-imagine reveal"><span class="step-no">02</span><span class="step-icon" aria-hidden="true">💡</span><h3>Imagine</h3><p>Ask better questions and explore creative, practical possibilities.</p></article>
+        <article class="process-step step-collab reveal"><span class="step-no">03</span><span class="step-icon" aria-hidden="true">🤝</span><h3>Collaborate</h3><p>Bring young people, mentors, institutions and communities together.</p></article>
+        <article class="process-step step-act reveal"><span class="step-no">04</span><span class="step-icon" aria-hidden="true">🚀</span><h3>Act</h3><p>Test ideas through appropriately supported activities and pilot initiatives.</p></article>
+        <article class="process-step step-learn reveal"><span class="step-no">05</span><span class="step-icon" aria-hidden="true">📚</span><h3>Learn</h3><p>Document outcomes, reflect honestly and improve what comes next.</p></article>
       </div>
       <div class="approach-footer"><span>LISTEN FIRST. ACT WITH PURPOSE. LEARN ALWAYS.</span><span class="approach-loop">↗</span></div>
     </section>
@@ -232,8 +245,26 @@
     </section>
 
     <section class="region-section section-pad" id="region">
+      <div class="region-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="region-copy reveal"><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>OUR GEOGRAPHICAL FOCUS</div><h2>Rooted here.<br/><em>Open to everywhere.</em></h2><p>Nashik is our starting point, with a wider focus on the communities, ideas and opportunities of North Maharashtra.</p><p>As initiatives develop, this space can become a transparent regional explorer showing where work is taking place, what each activity is intended to do and what has been learned.</p><a class="button button-outline-light" href="#get-involved">Connect with the initiative <span>↗</span></a></div>
-      <div class="region-visual reveal"><div class="region-visual-bg"></div><div class="region-map-label label-nashik"><span></span>NASHIK</div><div class="region-map-label label-north"><span></span>NORTH MAHARASHTRA</div><div class="region-network"><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i><svg viewBox="0 0 520 400" preserveAspectRatio="none"><path d="M64 258 154 184 244 224 314 108 416 154M154 184 180 308 280 286 416 154M244 224 314 108"/></svg></div><div class="map-disclaimer">Illustrative regional visual · not a project-location map</div><div class="region-stamp">NORTH<br/><b>MH</b><br/>INDIA</div></div>
+      <div class="region-visual reveal">
+        <div class="region-sky" aria-hidden="true">
+          <i class="region-cloud c1"></i><i class="region-cloud c2"></i><i class="region-cloud c3"></i>
+          <i class="region-sun"></i>
+        </div>
+        <div class="region-hills" aria-hidden="true"></div>
+        <div class="region-map-label label-nashik"><span></span>NASHIK</div>
+        <div class="region-map-label label-north"><span></span>NORTH MAHARASHTRA</div>
+        <div class="region-network">
+          <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i>
+          <svg viewBox="0 0 520 400" preserveAspectRatio="none" aria-hidden="true"><path d="M64 258 154 184 244 224 314 108 416 154M154 184 180 308 280 286 416 154M244 224 314 108"/></svg>
+        </div>
+        <div class="map-disclaimer">Illustrative regional visual · not a project-location map</div>
+        <div class="region-stamp">NORTH<br/><b>MH</b><br/>INDIA</div>
+        <div class="region-float-pin pin-a" aria-hidden="true">🏠</div>
+        <div class="region-float-pin pin-b" aria-hidden="true">🌳</div>
+        <div class="region-float-pin pin-c" aria-hidden="true">⭐</div>
+      </div>
     </section>
 
     <section class="stories-section section-pad" id="stories">
@@ -251,13 +282,14 @@
     </section>
 
     <section class="transparency-section section-pad" id="transparency">
+      <div class="transparency-blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="transparency-heading reveal"><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span>TRUST IS BUILT IN THE OPEN</div><h2>Open information.<br/><em>Accountable action.</em></h2><p>We believe that meaningful social impact needs honest documentation, clear responsibilities and a willingness to learn from outcomes.</p></div>
       <div class="resource-grid">
-        <article class="resource-card reveal"><span class="resource-icon">▤</span><span class="resource-no">01</span><h3>Annual reports</h3><p>Activity summaries, progress notes and year-wise documentation.</p><span class="resource-status">DOCUMENTATION TO COME</span></article>
-        <article class="resource-card reveal"><span class="resource-icon">⌁</span><span class="resource-no">02</span><h3>Impact data</h3><p>Defined indicators, methodology, project data and learning.</p><span class="resource-status">BASELINE TO BE ESTABLISHED</span></article>
-        <article class="resource-card reveal"><span class="resource-icon">◎</span><span class="resource-no">03</span><h3>Policies & safeguarding</h3><p>Privacy, conduct, volunteer guidance and child safeguarding.</p><span class="resource-status">POLICIES TO BE PUBLISHED</span></article>
-        <article class="resource-card reveal"><span class="resource-icon">↗</span><span class="resource-no">04</span><h3>Financial information</h3><p>Relevant summaries and audited information, where applicable.</p><span class="resource-status">DETAILS TO BE CONFIRMED</span></article>
-        <article class="resource-card reveal"><span class="resource-icon">▧</span><span class="resource-no">05</span><h3>Media library</h3><p>Approved photographs, event material and organisation resources.</p><span class="resource-status">MEDIA LIBRARY COMING SOON</span></article>
+        <article class="resource-card resource-reports reveal"><span class="resource-icon" aria-hidden="true">📋</span><span class="resource-no">01</span><h3>Annual reports</h3><p>Activity summaries, progress notes and year-wise documentation.</p><span class="resource-status">DOCUMENTATION TO COME</span></article>
+        <article class="resource-card resource-data reveal"><span class="resource-icon" aria-hidden="true">📊</span><span class="resource-no">02</span><h3>Impact data</h3><p>Defined indicators, methodology, project data and learning.</p><span class="resource-status">BASELINE TO BE ESTABLISHED</span></article>
+        <article class="resource-card resource-policies reveal"><span class="resource-icon" aria-hidden="true">🛡️</span><span class="resource-no">03</span><h3>Policies & safeguarding</h3><p>Privacy, conduct, volunteer guidance and child safeguarding.</p><span class="resource-status">POLICIES TO BE PUBLISHED</span></article>
+        <article class="resource-card resource-finance reveal"><span class="resource-icon" aria-hidden="true">💰</span><span class="resource-no">04</span><h3>Financial information</h3><p>Relevant summaries and audited information, where applicable.</p><span class="resource-status">DETAILS TO BE CONFIRMED</span></article>
+        <article class="resource-card resource-media reveal"><span class="resource-icon" aria-hidden="true">📸</span><span class="resource-no">05</span><h3>Media library</h3><p>Approved photographs, event material and organisation resources.</p><span class="resource-status">MEDIA LIBRARY COMING SOON</span></article>
       </div>
       <div class="transparency-foot"><span>NO CLAIM WITHOUT CONTEXT. NO NUMBER WITHOUT A SOURCE.</span><span>Our commitment to openness <b>↗</b></span></div>
     </section>
@@ -304,7 +336,7 @@
 
   <footer class="site-footer">
     <div class="footer-main">
-      <div class="footer-brand"><a class="brand brand-footer" href="#top"><img class="brand-logo" src="logo.jpg" alt="NextGen Impact Labs — Curiosity Meets Change." width="200" height="110" /></a><p>Young minds. Local action.<br/>Lasting impact.</p></div>
+      <div class="footer-brand"><a class="brand brand-footer" href="#top"><img class="brand-logo" src="logo.png?v=2" alt="NextGen Impact Labs — Curiosity Meets Change." width="200" height="110" /></a><p>Young minds. Local action.<br/>Lasting impact.</p></div>
       <div class="footer-column"><small>EXPLORE</small><a href="#our-story">Our story</a><a href="#pillars">What we do</a><a href="#impact">Our approach</a><a href="#stories">Ideas & stories</a></div>
       <div class="footer-column"><small>OPEN INFORMATION</small><a href="#transparency">Transparency hub</a><a href="#global">Global goals</a><a href="#founders">Youth leadership</a><a href="#region">Our region</a></div>
       <div class="footer-column"><small>CONNECT</small><a href="#get-involved">Get involved</a><a href="#contact">Contact</a><span class="footer-location">Nashik, Maharashtra, India</span></div>
@@ -316,6 +348,6 @@
   <div class="modal-backdrop" id="infoModal" aria-hidden="true"><div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" aria-label="Close dialog" id="modalClose">×</button><div class="modal-kicker" id="modalKicker">FOCUS AREA</div><h2 id="modalTitle">Explore this focus</h2><p id="modalBody"></p><div class="modal-list" id="modalList"></div><div class="modal-footer"><span>PROPOSED AREA OF FOCUS</span><button class="button button-dark" id="modalAction">Start a conversation ↗</button></div></div></div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

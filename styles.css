@@ -59,79 +59,193 @@ body.kids-playful{
     var(--ivory);
 }
 body.kids-playful .announcement{
-  background:linear-gradient(90deg,#FF8A4C,#FFD166 45%,#4ECDC4);
-  color:#243447;
+  background:linear-gradient(100deg,#2F6FED 0%,#6C8CFF 32%,#A78BFA 68%,#FF8A4C 100%);
+  color:#fff;
   font-family:var(--display);
   letter-spacing:.08em;
+  height:34px;
+  font-size:13px;
+  line-height:1;
 }
-body.kids-playful .announcement a{color:#243447;font-weight:800}
-body.kids-playful .announcement-dot,.kids-playful .live-dot{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.28)}
+body.kids-playful .announcement a{
+  color:#FFD166;
+  font-weight:800;
+  font-size:13px;
+}
+body.kids-playful .announcement-dot,.kids-playful .live-dot{background:#FFD166;box-shadow:0 0 0 4px rgba(255,209,102,.28)}
 body.kids-playful .site-header{
-  background:linear-gradient(180deg,rgba(224,246,236,.97),rgba(208,240,228,.94));
-  border-bottom:3px solid rgba(60,179,113,.28);
-  border-radius:0 0 28px 28px;
+  /* Same blue→lilac→coral wash as hero so navbar + slide read as one surface */
+  background:
+    radial-gradient(ellipse 70% 120% at 0% 50%,rgba(255,138,76,.55) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 120% at 100% 50%,rgba(167,139,250,.45) 0%,transparent 55%),
+    linear-gradient(100deg,#2F6FED 0%,#6C8CFF 32%,#A78BFA 68%,#FF8A4C 100%);
+  border-bottom:none;
+  border-radius:0;
   min-height:124px;
-  height:auto;
+  height:124px;
   padding-top:10px;
   padding-bottom:10px;
+  overflow:visible;
+  position:sticky;
+  top:0;
+  transition:transform .32s ease, box-shadow .32s ease;
+  will-change:transform;
+  box-shadow:none;
+}
+body.kids-playful .site-header.is-hidden{
+  transform:translateY(-120%);
+  pointer-events:none;
+}
+body.kids-playful .nav-rain{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  border-radius:inherit;
+  z-index:0;
+}
+body.kids-playful .nav-rain i{
+  position:absolute;
+  top:-20%;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ffffff;
+  box-shadow:0 0 6px rgba(255,255,255,.95),0 0 2px rgba(255,255,255,.7);
+  animation:nav-snow-fall ease-in-out infinite;
+  opacity:.95;
+}
+body.kids-playful .nav-rain i:nth-child(1){left:2%;animation-duration:1.45s;animation-delay:0s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(2){left:7%;animation-duration:1.8s;animation-delay:.08s;width:9px;height:9px}
+body.kids-playful .nav-rain i:nth-child(3){left:12%;animation-duration:1.35s;animation-delay:.18s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(4){left:17%;animation-duration:1.95s;animation-delay:.04s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(5){left:23%;animation-duration:1.6s;animation-delay:.22s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(6){left:28%;animation-duration:1.4s;animation-delay:.12s;width:10px;height:10px}
+body.kids-playful .nav-rain i:nth-child(7){left:34%;animation-duration:1.85s;animation-delay:.2s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(8){left:39%;animation-duration:1.25s;animation-delay:.06s;width:11px;height:11px}
+body.kids-playful .nav-rain i:nth-child(9){left:45%;animation-duration:1.65s;animation-delay:.28s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(10){left:50%;animation-duration:1.5s;animation-delay:.1s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(11){left:55%;animation-duration:1.9s;animation-delay:.22s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(12){left:61%;animation-duration:1.35s;animation-delay:.03s;width:9px;height:9px}
+body.kids-playful .nav-rain i:nth-child(13){left:66%;animation-duration:1.7s;animation-delay:.15s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(14){left:71%;animation-duration:1.4s;animation-delay:.26s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(15){left:76%;animation-duration:1.3s;animation-delay:.14s;width:10px;height:10px}
+body.kids-playful .nav-rain i:nth-child(16){left:81%;animation-duration:1.8s;animation-delay:.2s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(17){left:86%;animation-duration:1.55s;animation-delay:.32s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(18){left:90%;animation-duration:1.4s;animation-delay:.08s;width:9px;height:9px}
+body.kids-playful .nav-rain i:nth-child(19){left:94%;animation-duration:1.85s;animation-delay:.24s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(20){left:5%;animation-duration:1.6s;animation-delay:.36s;width:5px;height:5px;opacity:.75}
+body.kids-playful .nav-rain i:nth-child(21){left:32%;animation-duration:1.75s;animation-delay:.4s;width:6px;height:6px;opacity:.8}
+body.kids-playful .nav-rain i:nth-child(22){left:57%;animation-duration:1.3s;animation-delay:.3s;width:8px;height:8px;opacity:.85}
+body.kids-playful .nav-rain i:nth-child(23){left:73%;animation-duration:1.7s;animation-delay:.42s;width:5px;height:5px;opacity:.7}
+body.kids-playful .nav-rain i:nth-child(24){left:97%;animation-duration:1.5s;animation-delay:.34s;width:7px;height:7px;opacity:.8}
+body.kids-playful .nav-rain i:nth-child(25){left:10%;animation-duration:1.45s;animation-delay:.16s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(26){left:20%;animation-duration:1.65s;animation-delay:.28s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(27){left:30%;animation-duration:1.35s;animation-delay:.1s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(28){left:42%;animation-duration:1.75s;animation-delay:.36s;width:9px;height:9px}
+body.kids-playful .nav-rain i:nth-child(29){left:52%;animation-duration:1.4s;animation-delay:.18s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(30){left:64%;animation-duration:1.6s;animation-delay:.4s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(31){left:78%;animation-duration:1.3s;animation-delay:.22s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(32){left:88%;animation-duration:1.7s;animation-delay:.08s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(33){left:15%;animation-duration:1.5s;animation-delay:.44s;width:7px;height:7px;opacity:.8}
+body.kids-playful .nav-rain i:nth-child(34){left:48%;animation-duration:1.8s;animation-delay:.48s;width:6px;height:6px;opacity:.75}
+body.kids-playful .nav-rain i:nth-child(35){left:69%;animation-duration:1.4s;animation-delay:.05s;width:9px;height:9px;opacity:.85}
+body.kids-playful .nav-rain i:nth-child(36){left:84%;animation-duration:1.55s;animation-delay:.5s;width:5px;height:5px;opacity:.7}
+body.kids-playful .nav-rain i:nth-child(37){left:4%;animation-duration:1.5s;animation-delay:.25s;width:7px;height:7px}
+body.kids-playful .nav-rain i:nth-child(38){left:25%;animation-duration:1.35s;animation-delay:.38s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(39){left:37%;animation-duration:1.7s;animation-delay:.12s;width:8px;height:8px}
+body.kids-playful .nav-rain i:nth-child(40){left:54%;animation-duration:1.45s;animation-delay:.46s;width:5px;height:5px}
+body.kids-playful .nav-rain i:nth-child(41){left:67%;animation-duration:1.6s;animation-delay:.2s;width:9px;height:9px}
+body.kids-playful .nav-rain i:nth-child(42){left:80%;animation-duration:1.3s;animation-delay:.34s;width:6px;height:6px}
+body.kids-playful .nav-rain i:nth-child(43){left:14%;animation-duration:1.55s;animation-delay:.52s;width:7px;height:7px;opacity:.8}
+body.kids-playful .nav-rain i:nth-child(44){left:46%;animation-duration:1.4s;animation-delay:.15s;width:8px;height:8px;opacity:.85}
+body.kids-playful .nav-rain i:nth-child(45){left:75%;animation-duration:1.65s;animation-delay:.42s;width:5px;height:5px;opacity:.75}
+body.kids-playful .nav-rain i:nth-child(46){left:92%;animation-duration:1.5s;animation-delay:.28s;width:7px;height:7px;opacity:.8}
+@keyframes nav-snow-fall{
+  0%{transform:translate(0,0) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  50%{transform:translate(18px,85px) rotate(180deg);opacity:.95}
+  100%{transform:translate(-8px,170px) rotate(360deg);opacity:.2}
+}
+body.kids-playful .brand,
+body.kids-playful .desktop-nav,
+body.kids-playful .nav-cta,
+body.kids-playful .menu-toggle{
+  position:relative;
+  z-index:2;
 }
 body.kids-playful .brand{
   min-width:0;
   gap:0;
+  overflow:visible;
+  z-index:2;
 }
 body.kids-playful .brand-logo{
   display:block;
-  width:min(220px,42vw);
+  width:min(240px,44vw);
   height:auto;
+  max-height:110px;
   object-fit:contain;
+  background:transparent;
+  transform:scale(1.48);
+  transform-origin:left center;
 }
 body.kids-playful .brand-footer .brand-logo{
-  width:min(200px,70%);
-  background:#fff;
-  border-radius:16px;
-  padding:8px 10px;
+  width:min(240px,75%);
+  max-height:none;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  transform:scale(1.15);
+  transform-origin:left center;
 }
-body.kids-playful .mobile-menu{background:rgba(220,244,234,.97)}
+body.kids-playful .mobile-menu{
+  background:linear-gradient(160deg,#6C8CFF,#A78BFA 55%,#FF8A4C);
+}
+body.kids-playful .mobile-menu a{color:#fff;border-bottom-color:rgba(255,255,255,.22)}
+body.kids-playful .menu-toggle{border-color:rgba(255,255,255,.45)}
+body.kids-playful .menu-toggle span{background:#fff}
 body.kids-playful .nav-cta{
   background:linear-gradient(120deg,#FF8A4C,#FFD166);
   color:#243447;
   border-radius:999px;
-  box-shadow:0 10px 22px rgba(255,138,76,.28);
+  box-shadow:0 10px 22px rgba(255,138,76,.35);
   font-family:var(--display);
-  font-size:18px;
+  font-size:20px;
   font-weight:700;
-  padding:16px 26px;
+  padding:18px 28px;
+  border:3px solid rgba(255,255,255,.85);
 }
-body.kids-playful .nav-cta span{color:#243447;font-size:20px}
-body.kids-playful .nav-cta:hover{background:linear-gradient(120deg,#4ECDC4,#3B82F6);color:#fff}
-body.kids-playful .nav-cta:hover span{color:#fff}
+body.kids-playful .nav-cta span{color:#243447;font-size:22px}
+body.kids-playful .nav-cta:hover{background:linear-gradient(120deg,#FFD166,#FF8A4C);color:#243447}
+body.kids-playful .nav-cta:hover span{color:#243447}
 body.kids-playful .desktop-nav{
   gap:clamp(10px,1.4vw,22px);
   align-items:center;
 }
 body.kids-playful .desktop-nav a{
-  color:#31506b;
+  color:#fff;
   font-family:var(--display);
-  font-size:clamp(17px,1.45vw,21px);
+  font-size:clamp(18px,1.55vw,23px);
   font-weight:700;
-  padding:14px 20px;
+  padding:16px 22px;
   line-height:1.15;
 }
-body.kids-playful .desktop-nav a:before{background:linear-gradient(90deg,#FF8A4C,#F6E05E 48%,#4ECDC4);box-shadow:0 8px 18px rgba(255,138,76,.22)}
+body.kids-playful .desktop-nav a:before{background:linear-gradient(90deg,#FF8A4C,#FFB088 40%,#FFD166);box-shadow:0 8px 18px rgba(255,138,76,.35)}
 body.kids-playful .desktop-nav a:hover,
 body.kids-playful .desktop-nav a:focus-visible,
 body.kids-playful .desktop-nav a.is-active{color:#243447}
 @media(max-width:1400px) and (min-width:851px){
   body.kids-playful .desktop-nav a{
-    font-size:clamp(16px,1.5vw,20px);
-    padding:13px 16px;
+    font-size:clamp(17px,1.55vw,21px);
+    padding:14px 18px;
   }
-  body.kids-playful .nav-cta{font-size:17px;padding:14px 22px}
+  body.kids-playful .nav-cta{font-size:18px;padding:16px 24px}
 }
 
 /* Hero */
 body.kids-playful .hero{
-  /* Same coral→lilac mesh wash as bottom-right, mirrored into top-left (~80% strength) */
+  /* Continues the navbar wash — shared blue→lilac→coral ambient */
   background:
     radial-gradient(ellipse 72% 58% at 0% 0%,
       rgba(255,138,76,.8) 0%,
@@ -144,6 +258,7 @@ body.kids-playful .hero{
   border-radius:0 0 48px 48px;
   overflow:hidden;
   position:relative;
+  margin-top:0;
 }
 body.kids-playful .hero-bg{opacity:.18;background:
   radial-gradient(circle at 20% 30%,rgba(255,255,255,.5),transparent 28%),
@@ -158,9 +273,60 @@ body.kids-playful .play-dots i:nth-child(3){top:62%;left:14%;background:#FFD166}
 body.kids-playful .play-dots i:nth-child(4){bottom:22%;right:20%;background:#fff;width:8px;height:8px}
 body.kids-playful .play-dots i:nth-child(5){top:12%;left:42%;background:#A78BFA;width:9px;height:9px}
 body.kids-playful .play-dots i:nth-child(6){bottom:30%;left:48%;background:#FF8A4C;width:11px;height:11px}
+body.kids-playful .hero .eyebrow{
+  font-size:15px;
+  letter-spacing:.16em;
+  gap:12px;
+}
+body.kids-playful .hero .eyebrow-line{
+  width:36px;
+  height:5px;
+}
 body.kids-playful .hero h1{font-family:var(--display);letter-spacing:-.03em}
 body.kids-playful .hero h1 .period{color:#F6E05E}
 body.kids-playful .hero h1 em{color:#F6E05E;font-style:normal}
+/* Bounce Pop — line-by-line; JS restarts every 7s after finish */
+body.kids-playful .hero-dance .dance-line{
+  display:block;
+  opacity:1;
+  transform:none;
+  transform-origin:left bottom;
+}
+body.kids-playful .hero-dance em{
+  display:block;
+  opacity:1;
+  transform:none;
+}
+body.kids-playful .hero-dance.is-dancing .dance-line{
+  opacity:0;
+  transform:translateY(42px) scale(.78);
+  animation:bounce-pop .7s cubic-bezier(.34,1.56,.64,1) forwards;
+  animation-delay:calc(var(--i) * .45s);
+}
+body.kids-playful .hero-dance.is-dancing em{
+  opacity:0;
+  animation:bounce-pop-em .5s ease forwards;
+  animation-delay:1.6s;
+}
+@keyframes bounce-pop{
+  0%{opacity:0;transform:translateY(48px) scale(.7)}
+  35%{opacity:1;transform:translateY(-24px) scale(1.12)}
+  55%{transform:translateY(10px) scale(.92)}
+  72%{transform:translateY(-6px) scale(1.04)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes bounce-pop-em{
+  0%{opacity:0;transform:translateY(14px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  body.kids-playful .hero-dance .dance-line,
+  body.kids-playful .hero-dance em,
+  body.kids-playful .hero-dance.is-dancing .dance-line,
+  body.kids-playful .hero-dance.is-dancing em{
+    opacity:1;transform:none;animation:none;
+  }
+}
 body.kids-playful .button-gradient{
   background:linear-gradient(120deg,#FFD166,#FF8A4C);
   color:#243447;
@@ -169,6 +335,11 @@ body.kids-playful .button-gradient{
 }
 body.kids-playful .button-gradient span{color:#243447}
 body.kids-playful .hero-copy{max-width:640px}
+body.kids-playful .hero-lede{
+  color:#ffffff;
+  font-weight:700;
+  text-shadow:0 1px 8px rgba(36,52,71,.25);
+}
 body.kids-playful .button-gradient{
   flex:0 0 auto;
   padding:16px 26px;
@@ -249,26 +420,104 @@ body.kids-playful .hero-sticker{
 }
 body.kids-playful .sticker-bottom{transform:rotate(5deg);border-color:#4ECDC4}
 body.kids-playful .sticker-number{color:#FF8A4C;font-family:var(--display)}
-body.kids-playful .hero-caption{background:rgba(36,52,71,.55);border-radius:999px;padding:8px 14px}
+body.kids-playful .hero-caption{
+  background:rgba(36,52,71,.55);
+  border-radius:999px;
+  padding:12px 22px;
+  font-size:13px;
+  letter-spacing:.1em;
+  font-weight:700;
+}
+body.kids-playful .hero-caption .caption-pulse{
+  width:9px;
+  height:9px;
+  margin-right:10px;
+}
 body.kids-playful .wave-divider{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:70px;display:block;z-index:4}
 body.kids-playful .hero-bottomline{font-family:var(--display);letter-spacing:.08em}
 
-/* Impact ribbon */
+/* Impact ribbon — kids cartoon strip */
 body.kids-playful .impact-ribbon{
-  background:linear-gradient(90deg,#FFF1D6,#E8FFF9 50%,#FFE8F0);
+  background:
+    radial-gradient(ellipse 55% 120% at 0% 50%,rgba(255,138,76,.35) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 120% at 100% 50%,rgba(167,139,250,.4) 0%,transparent 55%),
+    linear-gradient(100deg,#FFF1D6 0%,#F3EEFF 45%,#E8FFF9 100%);
   color:#243447;
   border-radius:36px;
   margin:22px 3% 0;
-  padding:32px 4%;
-  box-shadow:var(--shadow);
-  border:3px solid rgba(255,138,76,.18);
-  gap:8px;
+  padding:28px 3.5%;
+  box-shadow:0 18px 40px rgba(167,139,250,.2);
+  border:4px solid rgba(255,255,255,.85);
+  gap:10px;
+  align-items:center;
 }
-body.kids-playful .metric{border-left-color:rgba(36,52,71,.12);padding:4px 30px}
-body.kids-playful .metric-icon{color:#FF8A4C;background:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 8px 16px rgba(255,138,76,.18)}
-body.kids-playful .ribbon-status{background:#fff;border-color:#4ECDC4;color:#31506b;border-radius:999px;font-size:14px;padding:14px 18px}
-body.kids-playful .ribbon-intro small,.kids-playful .metric small{color:#5d7085;font-size:13px}
-body.kids-playful .ribbon-intro strong,.kids-playful .metric strong{font-size:19px}
+body.kids-playful .ribbon-intro{
+  background:rgba(255,255,255,.72);
+  border:3px solid rgba(167,139,250,.3);
+  border-radius:24px;
+  padding:14px 16px;
+  box-shadow:0 8px 18px rgba(36,52,71,.08);
+}
+body.kids-playful .live-dot{
+  background:#FF8A4C;
+  box-shadow:0 0 0 5px rgba(255,138,76,.25);
+  animation:region-sun-pulse 2.4s ease-in-out infinite;
+}
+body.kids-playful .metric{
+  border-left:none;
+  padding:12px 14px;
+  background:#fff;
+  border-radius:22px;
+  border:3px solid #FFD166;
+  box-shadow:0 10px 20px rgba(36,52,71,.1);
+  transition:transform .25s ease, box-shadow .25s ease;
+  animation:step-card-bob 4.6s ease-in-out infinite;
+}
+body.kids-playful .metric:nth-child(3){animation-delay:.2s;border-color:#4ECDC4}
+body.kids-playful .metric:nth-child(4){animation-delay:.4s;border-color:#A78BFA}
+body.kids-playful .metric:nth-child(5){animation-delay:.6s;border-color:#FF8A4C}
+body.kids-playful .metric:hover{
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 16px 28px rgba(36,52,71,.16);
+  animation:none;
+}
+body.kids-playful .metric-icon{
+  color:#243447;
+  background:linear-gradient(160deg,#FFF8F0,#FFE8F0);
+  width:54px;height:54px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:24px;
+  border:3px solid rgba(255,255,255,.9);
+  box-shadow:0 8px 16px rgba(255,138,76,.18);
+}
+body.kids-playful .metric-building .metric-icon{background:linear-gradient(160deg,#E8FFF9,#D6F5FF)}
+body.kids-playful .metric-growing .metric-icon{background:linear-gradient(160deg,#F3EEFF,#FFE8F0)}
+body.kids-playful .metric-region .metric-icon{background:linear-gradient(160deg,#FFE8D6,#FFD166)}
+body.kids-playful .ribbon-status{
+  background:linear-gradient(120deg,#A78BFA,#6C8CFF);
+  border:3px solid #fff;
+  color:#fff;
+  border-radius:999px;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:14px;
+  padding:14px 18px;
+  box-shadow:0 10px 22px rgba(167,139,250,.35);
+  white-space:nowrap;
+  transition:transform .22s ease;
+}
+body.kids-playful .ribbon-status span{color:#fff}
+body.kids-playful .ribbon-status:hover{transform:translateY(-2px) scale(1.03)}
+body.kids-playful .ribbon-intro small,.kids-playful .metric small{
+  color:#5d7085;
+  font-size:13px;
+  font-weight:600;
+}
+body.kids-playful .ribbon-intro strong,.kids-playful .metric strong{
+  font-family:var(--display);
+  font-size:18px;
+  color:#243447;
+}
 
 /* Intro */
 body.kids-playful .intro-section{background:transparent;gap:28px}
@@ -365,100 +614,453 @@ body.kids-playful .pillar-link{font-family:var(--display)}
   body.kids-playful .pillar-symbol{transition:none;transform:none}
 }
 
-/* Approach */
+/* Approach — kids cartoon journey */
 body.kids-playful .approach-section{
-  background:linear-gradient(160deg,#243447,#31506b 55%,#3B82F6);
+  background:
+    radial-gradient(ellipse 70% 55% at 0% 0%,rgba(255,138,76,.55) 0%,rgba(255,138,76,.2) 35%,transparent 70%),
+    radial-gradient(ellipse 65% 50% at 100% 100%,rgba(167,139,250,.5) 0%,rgba(59,130,246,.25) 40%,transparent 72%),
+    linear-gradient(155deg,#3B82F6 0%,#6C8CFF 35%,#A78BFA 70%,#FF8A4C 100%);
   border-radius:40px;
   margin:20px 3%;
   position:relative;
   overflow:hidden;
+  border:4px solid rgba(255,255,255,.35);
+  box-shadow:0 22px 50px rgba(59,130,246,.28);
 }
 body.kids-playful .approach-section:before{
   content:"";position:absolute;inset:auto -40px -60px auto;width:220px;height:220px;border-radius:50%;
-  background:rgba(246,224,94,.18);pointer-events:none;
+  background:rgba(246,224,94,.28);pointer-events:none;z-index:0;
+}
+body.kids-playful .approach-blobs{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+body.kids-playful .approach-blobs span{
+  position:absolute;border-radius:50%;opacity:.35;
+  animation:approach-blob-float 6s ease-in-out infinite;
+}
+body.kids-playful .approach-blobs span:nth-child(1){
+  width:90px;height:90px;top:12%;left:8%;background:#FFD166;animation-delay:0s;
+}
+body.kids-playful .approach-blobs span:nth-child(2){
+  width:60px;height:60px;top:18%;right:12%;background:#FFB4C2;animation-delay:1.2s;
+}
+body.kids-playful .approach-blobs span:nth-child(3){
+  width:70px;height:70px;bottom:18%;left:18%;background:#4ECDC4;animation-delay:.6s;
+}
+body.kids-playful .approach-blobs span:nth-child(4){
+  width:48px;height:48px;bottom:22%;right:20%;background:#F6E05E;animation-delay:1.8s;
+}
+@keyframes approach-blob-float{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-14px) scale(1.08)}
+}
+body.kids-playful .approach-top,
+body.kids-playful .process-line,
+body.kids-playful .approach-footer{position:relative;z-index:1}
+body.kids-playful .approach-top h2{
+  color:#fff;
+  text-shadow:0 4px 0 rgba(36,52,71,.12);
+}
+body.kids-playful .approach-top h2 em{
+  font-family:var(--display);
+  font-style:normal;
+  color:#F6E05E;
+}
+body.kids-playful .approach-top>p{
+  color:rgba(255,255,255,.92);
+  font-family:var(--body);
+  font-weight:600;
+  background:rgba(255,255,255,.16);
+  border:2px solid rgba(255,255,255,.28);
+  border-radius:22px;
+  padding:16px 20px;
+  backdrop-filter:blur(6px);
+}
+body.kids-playful .approach-top .light-eyebrow{color:rgba(255,255,255,.9)}
+body.kids-playful .process-line{
+  gap:14px;
+  margin-top:56px;
+}
+body.kids-playful .process-line:before{
+  top:42px;
+  height:0;
+  border-top:4px dashed rgba(255,255,255,.55);
+  background:none;
+  opacity:1;
 }
 body.kids-playful .process-step{
-  background:rgba(255,255,255,.08);
-  border:2px solid rgba(255,255,255,.14);
+  background:#fff;
+  border:3px solid transparent;
   border-radius:28px;
-  padding:22px 18px;
-  margin:0 6px;
+  padding:22px 16px 20px;
+  margin:0;
+  text-align:center;
+  box-shadow:0 14px 28px rgba(36,52,71,.16);
+  transition:transform .28s ease, box-shadow .28s ease;
+  animation:step-card-bob 4.5s ease-in-out infinite;
 }
+body.kids-playful .process-step:nth-child(2){animation-delay:.35s}
+body.kids-playful .process-step:nth-child(3){animation-delay:.7s}
+body.kids-playful .process-step:nth-child(4){animation-delay:1.05s}
+body.kids-playful .process-step:nth-child(5){animation-delay:1.4s}
+@keyframes step-card-bob{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+body.kids-playful .process-step:hover{
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:0 22px 40px rgba(36,52,71,.22);
+  animation:none;
+}
+body.kids-playful .step-observe{border-color:#4ECDC4}
+body.kids-playful .step-imagine{border-color:#FFD166}
+body.kids-playful .step-collab{border-color:#A78BFA}
+body.kids-playful .step-act{border-color:#FF8A4C}
+body.kids-playful .step-learn{border-color:#3CB371}
 body.kids-playful .step-no{
   width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-  background:linear-gradient(135deg,#FFD166,#FF8A4C);color:#243447;font-family:var(--display);font-weight:700;font-size:16px;
+  margin:0 auto;
+  background:linear-gradient(135deg,#FFD166,#FF8A4C);
+  color:#243447;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:0;
+  box-shadow:0 6px 14px rgba(255,138,76,.35);
+  position:relative;
+  z-index:2;
 }
+body.kids-playful .step-imagine .step-no{background:linear-gradient(135deg,#F6E05E,#FFD166)}
+body.kids-playful .step-collab .step-no{background:linear-gradient(135deg,#C4B5FD,#A78BFA);color:#fff}
+body.kids-playful .step-act .step-no{background:linear-gradient(135deg,#FFB088,#FF8A4C)}
+body.kids-playful .step-learn .step-no{background:linear-gradient(135deg,#6EE7B7,#3CB371);color:#fff}
+body.kids-playful .step-observe .step-no{background:linear-gradient(135deg,#7EEAE0,#4ECDC4);color:#243447}
 body.kids-playful .step-icon{
-  width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin:14px 0;
-  background:#fff;color:#3B82F6;font-size:22px;
+  width:72px;height:72px;border-radius:50%;display:grid;place-items:center;
+  margin:14px auto 12px;
+  background:linear-gradient(160deg,#FFF8F0,#FFE8F0);
+  color:#243447;
+  font-size:34px;
+  border:3px solid rgba(255,255,255,.9);
+  box-shadow:0 8px 18px rgba(36,52,71,.12), inset 0 -4px 0 rgba(0,0,0,.04);
+  position:relative;
+  z-index:1;
 }
-body.kids-playful .process-step h3{font-family:var(--display);color:#fff}
-body.kids-playful .process-line:before{opacity:.25}
+body.kids-playful .process-step h3{
+  font-family:var(--display);
+  color:#243447;
+  font-size:22px;
+  margin:0 0 8px;
+}
+body.kids-playful .process-step p{
+  color:#5a6578;
+  font-size:15px;
+  line-height:1.55;
+  margin:0;
+  font-weight:600;
+}
+body.kids-playful .approach-footer{
+  border-top:3px dashed rgba(255,255,255,.4);
+  color:rgba(255,255,255,.9);
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.12em;
+  margin-top:48px;
+}
+body.kids-playful .approach-loop{
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#FFD166,#FF8A4C);
+  color:#243447;
+  font-size:22px;
+  box-shadow:0 8px 18px rgba(255,138,76,.35);
+  animation:approach-loop-spin 4s ease-in-out infinite;
+}
+@keyframes approach-loop-spin{
+  0%,100%{transform:rotate(0deg) scale(1)}
+  50%{transform:rotate(18deg) scale(1.08)}
+}
+@media(max-width:850px){
+  body.kids-playful .process-line{grid-template-columns:1fr;gap:16px}
+  body.kids-playful .process-line:before{display:none}
+  body.kids-playful .process-step{text-align:left;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:14px;align-items:center}
+  body.kids-playful .process-step .step-no{grid-row:1;grid-column:1;margin:0}
+  body.kids-playful .process-step .step-icon{grid-row:2;grid-column:1;margin:0;width:56px;height:56px;font-size:26px}
+  body.kids-playful .process-step h3{grid-row:1;grid-column:2;margin:0}
+  body.kids-playful .process-step p{grid-row:2;grid-column:2}
+}
 
 /* Founders */
 body.kids-playful .founders-section{background:transparent}
+body.kids-playful .founder-grid{gap:22px}
 body.kids-playful .founder-card{
   border-radius:30px;
-  border:3px solid transparent;
-  box-shadow:0 18px 40px rgba(36,52,71,.1);
+  border:4px solid #A78BFA;
+  box-shadow:0 16px 32px rgba(36,52,71,.14);
   isolation:isolate;
   overflow:hidden;
-}
-/* Logo colors: Gen orange (#FF8A4C) for Kiyansh, Next navy blue for Yuvaan */
-body.kids-playful .founder-one{
-  border-color:rgba(255,138,76,.55);
   background:
-    radial-gradient(ellipse 80% 70% at 100% 0%,rgba(255,138,76,.55) 0%,rgba(255,138,76,.22) 34%,transparent 68%),
-    radial-gradient(ellipse 70% 60% at 0% 100%,rgba(255,209,102,.4) 0%,rgba(255,138,76,.2) 42%,transparent 70%),
-    linear-gradient(155deg,#FFF8F0 0%,#FFE4D0 45%,#FFD0B0 100%);
+    radial-gradient(ellipse 80% 70% at 100% 0%,rgba(167,139,250,.35) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 60% at 0% 100%,rgba(255,138,76,.28) 0%,transparent 58%),
+    linear-gradient(155deg,#FFFFFF 0%,#F3EEFF 55%,#FFE8D6 100%);
+  transition:transform .28s ease, box-shadow .28s ease;
+  animation:step-card-bob 5s ease-in-out infinite;
 }
+body.kids-playful .founder-card:nth-child(2){animation-delay:.45s}
+body.kids-playful .founder-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 24px 44px rgba(36,52,71,.2);
+  animation:none;
+}
+/* Shared kids theme — both cards match; monogram keeps Next-blue / Gen-orange identity */
+body.kids-playful .founder-one,
 body.kids-playful .founder-two{
-  border-color:rgba(30,58,110,.35);
+  border-color:#A78BFA;
   background:
-    radial-gradient(ellipse 80% 70% at 0% 0%,rgba(30,58,110,.45) 0%,rgba(59,96,168,.22) 34%,transparent 68%),
-    radial-gradient(ellipse 70% 60% at 100% 100%,rgba(66,110,180,.35) 0%,rgba(30,58,110,.16) 42%,transparent 70%),
-    linear-gradient(155deg,#EEF3FB 0%,#D8E4F5 45%,#C5D5EC 100%);
+    radial-gradient(ellipse 80% 70% at 100% 0%,rgba(167,139,250,.35) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 60% at 0% 100%,rgba(255,138,76,.28) 0%,transparent 58%),
+    linear-gradient(155deg,#FFFFFF 0%,#F3EEFF 55%,#FFE8D6 100%);
 }
 body.kids-playful .founder-monogram.face-block{
   position:relative;width:120px;height:140px;border-radius:28px;
-  background:linear-gradient(160deg,#FF8A4C,#FF9F5A);display:grid;place-items:center;
+  background:linear-gradient(160deg,#A78BFA,#6C8CFF);
+  display:grid;place-items:center;
   font-size:0;overflow:hidden;
+  border:3px solid #fff;
+  box-shadow:0 10px 22px rgba(167,139,250,.35);
 }
-body.kids-playful .founder-two .founder-monogram.face-block{background:linear-gradient(160deg,#1E3A6E,#3B6AB0)}
+body.kids-playful .founder-one .founder-monogram.face-block{
+  background:linear-gradient(160deg,#FF8A4C,#FFD166);
+  box-shadow:0 10px 22px rgba(255,138,76,.35);
+}
+body.kids-playful .founder-two .founder-monogram.face-block{
+  background:linear-gradient(160deg,#3B82F6,#6C8CFF);
+  box-shadow:0 10px 22px rgba(59,130,246,.35);
+}
 body.kids-playful .founder-monogram.face-block b{
   font-family:var(--display);font-size:54px;color:#fff;line-height:1;margin-top:28px;
 }
 body.kids-playful .face-eyes{
   position:absolute;top:28px;left:50%;transform:translateX(-50%);width:54px;height:12px;
-  background:radial-gradient(circle at 10px 6px,#243447 4px,transparent 5px),
-             radial-gradient(circle at 42px 6px,#243447 4px,transparent 5px);
-}
-body.kids-playful .founder-two .face-eyes{
   background:radial-gradient(circle at 10px 6px,#fff 4px,transparent 5px),
              radial-gradient(circle at 42px 6px,#fff 4px,transparent 5px);
 }
+body.kids-playful .founder-one .face-eyes{
+  background:radial-gradient(circle at 10px 6px,#243447 4px,transparent 5px),
+             radial-gradient(circle at 42px 6px,#243447 4px,transparent 5px);
+}
 body.kids-playful .face-smile{
   position:absolute;top:48px;left:50%;transform:translateX(-50%);
-  width:28px;height:14px;border-bottom:3px solid #243447;border-radius:0 0 20px 20px;
+  width:28px;height:14px;border-bottom:3px solid #fff;border-radius:0 0 20px 20px;
 }
-body.kids-playful .founder-two .face-smile{border-bottom-color:#fff}
-body.kids-playful .founder-details h3{font-family:var(--display)}
+body.kids-playful .founder-one .face-smile{border-bottom-color:#243447}
+body.kids-playful .founder-details h3{font-family:var(--display);color:#243447}
+body.kids-playful .founder-role{
+  font-family:var(--display);
+  color:#6b4fc4;
+  letter-spacing:.08em;
+}
+body.kids-playful .founder-details p{color:#5a6578;font-weight:600}
 body.kids-playful .founder-tags span{
-  background:#FFE8D6;border:0;border-radius:999px;color:#c45a1f;font-family:var(--display);font-size:14px;padding:8px 12px;
+  background:linear-gradient(120deg,#F3EEFF,#FFE8D6);
+  border:2px solid rgba(167,139,250,.35);
+  border-radius:999px;
+  color:#6b4fc4;
+  font-family:var(--display);
+  font-size:14px;
+  font-weight:700;
+  padding:8px 12px;
 }
-body.kids-playful .founder-two .founder-tags span{background:#E4ECF8;color:#1E3A6E}
+body.kids-playful .founder-one .founder-tags span,
+body.kids-playful .founder-two .founder-tags span{
+  background:linear-gradient(120deg,#F3EEFF,#FFE8D6);
+  border:2px solid rgba(167,139,250,.35);
+  color:#6b4fc4;
+}
+body.kids-playful .founder-number{
+  font-family:var(--display);
+  color:rgba(167,139,250,.35);
+}
 body.kids-playful .safeguarding-note{
-  background:#fff;border-radius:24px;border:3px dashed #A78BFA;box-shadow:none;
+  background:#fff;
+  border-radius:24px;
+  border:3px dashed #A78BFA;
+  box-shadow:0 12px 28px rgba(167,139,250,.12);
 }
 
-/* Region */
+/* Region — kids cartoon map */
 body.kids-playful .region-section{
-  border-radius:40px;margin:20px 3%;overflow:hidden;
-  background:linear-gradient(120deg,#31506b,#3B82F6 55%,#4ECDC4);
+  border-radius:40px;
+  margin:20px 3%;
+  overflow:hidden;
+  position:relative;
+  border:4px solid rgba(255,255,255,.35);
+  box-shadow:0 22px 50px rgba(78,205,196,.28);
+  background:
+    radial-gradient(ellipse 70% 55% at 100% 0%,rgba(255,209,102,.45) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 50% at 0% 100%,rgba(167,139,250,.4) 0%,transparent 60%),
+    linear-gradient(125deg,#3B82F6 0%,#4ECDC4 48%,#A78BFA 100%);
+}
+body.kids-playful .region-blobs{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+body.kids-playful .region-blobs span{
+  position:absolute;border-radius:50%;opacity:.3;
+  animation:approach-blob-float 7s ease-in-out infinite;
+}
+body.kids-playful .region-blobs span:nth-child(1){width:80px;height:80px;top:10%;left:6%;background:#FFB4C2}
+body.kids-playful .region-blobs span:nth-child(2){width:56px;height:56px;bottom:16%;left:28%;background:#F6E05E;animation-delay:1s}
+body.kids-playful .region-blobs span:nth-child(3){width:70px;height:70px;top:20%;right:42%;background:#FF8A4C;animation-delay:1.6s}
+body.kids-playful .region-copy,
+body.kids-playful .region-visual{position:relative;z-index:1}
+body.kids-playful .region-copy h2{
+  color:#fff;
+  text-shadow:0 4px 0 rgba(36,52,71,.12);
+}
+body.kids-playful .region-copy h2 em{
+  font-family:var(--display);
+  font-style:normal;
+  color:#F6E05E;
+}
+body.kids-playful .region-copy p{
+  color:rgba(255,255,255,.94);
+  font-weight:600;
+}
+body.kids-playful .region-copy .light-eyebrow{color:rgba(255,255,255,.92)}
+body.kids-playful .region-section .button-outline-light{
+  border:3px solid #fff;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  color:#fff;
+  font-family:var(--display);
+  font-weight:700;
+  padding:14px 22px;
+  box-shadow:0 10px 22px rgba(36,52,71,.16);
+  transition:transform .25s ease, background .25s ease;
+}
+body.kids-playful .region-section .button-outline-light:hover{
+  background:#fff;
+  color:#243447;
+  transform:translateY(-3px) scale(1.03);
+}
+body.kids-playful .region-visual{
+  height:420px;
+  border:4px solid rgba(255,255,255,.75);
+  border-radius:32px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,#9AD7FF 0%,#C8ECFF 42%,#FFE8B0 42%,#FFE8B0 58%,#7ED957 58%,#3CB371 100%);
+  box-shadow:0 18px 36px rgba(36,52,71,.18);
+}
+body.kids-playful .region-visual-bg{display:none}
+body.kids-playful .region-sky{
+  position:absolute;inset:0 0 45% 0;pointer-events:none;z-index:1;
+}
+body.kids-playful .region-sun{
+  position:absolute;top:18px;right:28px;width:54px;height:54px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#FFF6B0,#FFD166 55%,#FF8A4C);
+  box-shadow:0 0 0 10px rgba(255,209,102,.28),0 8px 20px rgba(255,138,76,.35);
+  animation:region-sun-pulse 3.5s ease-in-out infinite;
+}
+@keyframes region-sun-pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+}
+body.kids-playful .region-cloud{
+  position:absolute;background:#fff;border-radius:999px;
+  box-shadow:18px 0 0 #fff,36px 4px 0 #fff,-14px 6px 0 #fff;
+  animation:region-cloud-drift 8s ease-in-out infinite;
+  opacity:.95;
+}
+body.kids-playful .region-cloud.c1{width:40px;height:18px;top:28px;left:12%;animation-duration:9s}
+body.kids-playful .region-cloud.c2{width:28px;height:14px;top:56px;left:38%;animation-duration:7s;animation-delay:1s}
+body.kids-playful .region-cloud.c3{width:34px;height:16px;top:36px;left:62%;animation-duration:10s;animation-delay:.5s}
+@keyframes region-cloud-drift{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(18px)}
+}
+body.kids-playful .region-hills{
+  position:absolute;left:0;right:0;bottom:0;height:48%;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 70% at 18% 100%,#58C26A 0 62%,transparent 63%),
+    radial-gradient(ellipse 50% 65% at 52% 110%,#3CB371 0 60%,transparent 61%),
+    radial-gradient(ellipse 48% 60% at 86% 105%,#6EDC7A 0 58%,transparent 59%);
+}
+body.kids-playful .region-network{
+  z-index:3;
+}
+body.kids-playful .region-network svg path{
+  stroke:#fff;
+  stroke-width:4;
+  stroke-dasharray:10 10;
+  stroke-linecap:round;
+  fill:none;
+  opacity:.85;
+  animation:region-dash 2.4s linear infinite;
+}
+@keyframes region-dash{
+  to{stroke-dashoffset:-40}
+}
+body.kids-playful .region-network .node{
+  background:radial-gradient(circle at 30% 30%,#fff,#FFD166 55%,#FF8A4C);
+  border:3px solid #fff;
+  box-shadow:0 0 0 6px rgba(255,209,102,.35),0 8px 16px rgba(255,138,76,.35);
+  animation:region-node-pop 2.8s ease-in-out infinite;
+}
+body.kids-playful .region-network .node.n2{animation-delay:.35s}
+body.kids-playful .region-network .node.n3{animation-delay:.7s}
+body.kids-playful .region-network .node.n4{animation-delay:1.05s}
+body.kids-playful .region-network .node.n5{animation-delay:1.4s}
+@keyframes region-node-pop{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.18)}
+}
+body.kids-playful .region-map-label{
+  z-index:4;
+  background:#fff;
+  color:#243447;
+  border-radius:999px;
+  padding:8px 14px;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:3px solid #FFD166;
+  box-shadow:0 10px 20px rgba(36,52,71,.14);
+}
+body.kids-playful .region-map-label span{
+  background:linear-gradient(135deg,#FF8A4C,#FFD166);
+  box-shadow:none;
+}
+body.kids-playful .label-north{border-color:#A78BFA}
+body.kids-playful .label-north span{background:linear-gradient(135deg,#A78BFA,#6C8CFF)}
+body.kids-playful .map-disclaimer{
+  z-index:4;
+  background:rgba(36,52,71,.55);
+  color:#fff;
+  border-radius:999px;
+  padding:6px 12px;
+  font-family:var(--display);
+  font-size:10px;
+  letter-spacing:.04em;
 }
 body.kids-playful .region-stamp{
-  background:#FFD166;color:#243447;border-radius:24px;font-family:var(--display);
+  background:linear-gradient(145deg,#FFD166,#FF8A4C);
+  color:#243447;
+  border-radius:24px;
+  font-family:var(--display);
+  border:3px solid #fff;
+  box-shadow:0 12px 24px rgba(255,138,76,.35);
+  animation:step-card-bob 4s ease-in-out infinite;
+  z-index:4;
 }
+body.kids-playful .region-float-pin{
+  position:absolute;z-index:5;font-size:26px;
+  filter:drop-shadow(0 6px 10px rgba(36,52,71,.2));
+  animation:step-card-bob 3.6s ease-in-out infinite;
+}
+body.kids-playful .region-float-pin.pin-a{left:10%;bottom:18%;animation-delay:.2s}
+body.kids-playful .region-float-pin.pin-b{right:14%;bottom:28%;animation-delay:.8s;font-size:30px}
+body.kids-playful .region-float-pin.pin-c{left:46%;top:38%;animation-delay:1.2s;font-size:22px}
 
 /* Stories */
 body.kids-playful .stories-section{background:transparent}
@@ -529,17 +1131,145 @@ body.kids-playful .idea-label{border-radius:999px;background:#FFE8F0;color:#c241
   body.kids-playful .story-grid{grid-template-columns:1fr}
 }
 
-/* Transparency stays calmer but softer */
+/* Transparency — kids cartoon trust hub */
 body.kids-playful .transparency-section{
-  background:linear-gradient(160deg,#243447,#31506b);
-  border-radius:40px;margin:20px 3%;
+  background:
+    radial-gradient(ellipse 70% 55% at 0% 0%,rgba(255,209,102,.5) 0%,transparent 55%),
+    radial-gradient(ellipse 65% 50% at 100% 100%,rgba(167,139,250,.45) 0%,transparent 58%),
+    linear-gradient(155deg,#3B82F6 0%,#A78BFA 45%,#FF8A4C 100%);
+  border-radius:40px;
+  margin:20px 3%;
+  position:relative;
+  overflow:hidden;
+  border:4px solid rgba(255,255,255,.35);
+  box-shadow:0 22px 50px rgba(59,130,246,.28);
 }
+body.kids-playful .transparency-section:after{display:none}
+body.kids-playful .transparency-blobs{
+  position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+body.kids-playful .transparency-blobs span{
+  position:absolute;border-radius:50%;opacity:.32;
+  animation:approach-blob-float 6.5s ease-in-out infinite;
+}
+body.kids-playful .transparency-blobs span:nth-child(1){width:88px;height:88px;top:10%;right:8%;background:#FFD166}
+body.kids-playful .transparency-blobs span:nth-child(2){width:58px;height:58px;top:28%;left:6%;background:#4ECDC4;animation-delay:.8s}
+body.kids-playful .transparency-blobs span:nth-child(3){width:70px;height:70px;bottom:18%;left:22%;background:#FFB4C2;animation-delay:1.4s}
+body.kids-playful .transparency-blobs span:nth-child(4){width:48px;height:48px;bottom:24%;right:18%;background:#F6E05E;animation-delay:2s}
+body.kids-playful .transparency-heading,
+body.kids-playful .resource-grid,
+body.kids-playful .transparency-foot{position:relative;z-index:1}
+body.kids-playful .transparency-heading h2{
+  color:#fff;
+  text-shadow:0 4px 0 rgba(36,52,71,.12);
+}
+body.kids-playful .transparency-heading h2 em{
+  font-family:var(--display);
+  font-style:normal;
+  color:#F6E05E;
+}
+body.kids-playful .transparency-heading p{
+  color:rgba(255,255,255,.94);
+  font-weight:600;
+  background:rgba(255,255,255,.16);
+  border:2px solid rgba(255,255,255,.28);
+  border-radius:22px;
+  padding:16px 20px;
+  backdrop-filter:blur(6px);
+}
+body.kids-playful .transparency-heading .light-eyebrow{color:rgba(255,255,255,.92)}
+body.kids-playful .resource-grid{gap:14px}
 body.kids-playful .resource-card{
-  background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.12);border-radius:24px;
+  background:#fff;
+  border:3px solid #FFD166;
+  border-radius:28px;
+  padding:22px 18px 18px;
+  min-height:270px;
+  box-shadow:0 14px 28px rgba(36,52,71,.16);
+  transition:transform .28s ease, box-shadow .28s ease;
+  animation:step-card-bob 4.8s ease-in-out infinite;
+  display:flex;
+  flex-direction:column;
 }
-body.kids-playful .resource-card h3{font-family:var(--display)}
+body.kids-playful .resource-card:nth-child(2){animation-delay:.3s;border-color:#4ECDC4}
+body.kids-playful .resource-card:nth-child(3){animation-delay:.6s;border-color:#A78BFA}
+body.kids-playful .resource-card:nth-child(4){animation-delay:.9s;border-color:#FF8A4C}
+body.kids-playful .resource-card:nth-child(5){animation-delay:1.2s;border-color:#3CB371}
+body.kids-playful .resource-card:hover{
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:0 22px 40px rgba(36,52,71,.22);
+  animation:none;
+}
+body.kids-playful .resource-card h3{
+  font-family:var(--display);
+  color:#243447;
+  font-size:20px;
+  margin:12px 0 8px;
+}
+body.kids-playful .resource-card p{
+  color:#5a6578;
+  font-weight:600;
+  font-size:15px;
+  line-height:1.5;
+  flex:1;
+}
 body.kids-playful .resource-icon{
-  width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#FFD166;color:#243447;
+  width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(160deg,#FFF8F0,#FFE8F0);
+  color:#243447;
+  font-size:30px;
+  border:3px solid rgba(255,255,255,.9);
+  box-shadow:0 8px 18px rgba(36,52,71,.12);
+}
+body.kids-playful .resource-no{
+  font-family:var(--display);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0;
+  color:#fff;
+  background:linear-gradient(135deg,#FFD166,#FF8A4C);
+  width:36px;height:36px;border-radius:50%;
+  display:grid;place-items:center;
+  box-shadow:0 6px 12px rgba(255,138,76,.3);
+}
+body.kids-playful .resource-data .resource-no{background:linear-gradient(135deg,#7EEAE0,#4ECDC4);color:#243447}
+body.kids-playful .resource-policies .resource-no{background:linear-gradient(135deg,#C4B5FD,#A78BFA);color:#fff}
+body.kids-playful .resource-finance .resource-no{background:linear-gradient(135deg,#FFB088,#FF8A4C)}
+body.kids-playful .resource-media .resource-no{background:linear-gradient(135deg,#6EE7B7,#3CB371);color:#fff}
+body.kids-playful .resource-status{
+  position:static;
+  display:inline-block;
+  margin-top:auto;
+  align-self:flex-start;
+  background:linear-gradient(120deg,#FFE8F0,#FFD166);
+  color:#c2415a;
+  border-radius:999px;
+  padding:7px 12px;
+  font-family:var(--display);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.06em;
+  border:2px solid rgba(255,255,255,.85);
+}
+body.kids-playful .resource-no{
+  top:16px;
+  right:16px;
+}
+body.kids-playful .transparency-foot{
+  border-top:3px dashed rgba(255,255,255,.4);
+  color:rgba(255,255,255,.92);
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.1em;
+  margin-top:40px;
+}
+body.kids-playful .transparency-foot b{
+  display:inline-grid;place-items:center;
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,#FFD166,#FF8A4C);
+  color:#243447;
+  margin-left:8px;
+  box-shadow:0 6px 14px rgba(255,138,76,.35);
 }
 
 /* SDG */
@@ -568,17 +1298,112 @@ body.kids-playful .collab-partner .collab-icon{background:linear-gradient(135deg
 body.kids-playful .collab-idea .collab-icon{background:linear-gradient(135deg,#A78BFA,#FFB4C2);color:#fff}
 body.kids-playful .collab-card h3{font-family:var(--display)}
 
-/* Contact */
+/* Contact — kids cartoon form */
 body.kids-playful .contact-section{background:transparent}
 body.kids-playful .contact-form{
-  background:#fff;border-radius:32px;border:3px solid rgba(78,205,196,.35);box-shadow:var(--shadow);
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%,rgba(167,139,250,.28) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 55% at 0% 100%,rgba(255,138,76,.22) 0%,transparent 55%),
+    linear-gradient(155deg,#FFFFFF 0%,#F3EEFF 55%,#FFE8D6 100%);
+  border-radius:32px;
+  border:4px solid #A78BFA;
+  box-shadow:0 22px 48px rgba(167,139,250,.28);
+  padding:32px;
+  position:relative;
+  overflow:hidden;
 }
-body.kids-playful .form-head{font-family:var(--display);color:#FF8A4C}
-body.kids-playful .contact-form input,.kids-playful .contact-form select,.kids-playful .contact-form textarea{
-  border-radius:16px;border:2px solid rgba(36,52,71,.1);background:#FFF8F1;font-size:16px;
+body.kids-playful .contact-form:before{
+  content:"";
+  position:absolute;
+  top:-30px;right:-30px;
+  width:110px;height:110px;
+  border-radius:50%;
+  background:rgba(255,209,102,.35);
+  pointer-events:none;
 }
-body.kids-playful .contact-form input:focus,.kids-playful .contact-form select:focus,.kids-playful .contact-form textarea:focus{
-  border-color:#4ECDC4;box-shadow:0 0 0 4px rgba(78,205,196,.18);
+body.kids-playful .contact-form:after{
+  content:"";
+  position:absolute;
+  bottom:-24px;left:-20px;
+  width:80px;height:80px;
+  border-radius:50%;
+  background:rgba(78,205,196,.28);
+  pointer-events:none;
+}
+body.kids-playful .form-head{
+  position:relative;
+  z-index:1;
+  font-family:var(--display);
+  color:#fff;
+  background:linear-gradient(120deg,#FF8A4C,#A78BFA);
+  border-radius:999px;
+  padding:10px 16px;
+  letter-spacing:.1em;
+  box-shadow:0 8px 18px rgba(255,138,76,.28);
+}
+body.kids-playful .form-spark{
+  color:#FFD166;
+  font-size:22px;
+}
+body.kids-playful .contact-form label{
+  position:relative;
+  z-index:1;
+  font-family:var(--display);
+  color:#243447;
+}
+body.kids-playful .contact-form input,
+body.kids-playful .contact-form select,
+body.kids-playful .contact-form textarea{
+  border-radius:18px;
+  border:3px solid rgba(167,139,250,.28);
+  background:rgba(255,255,255,.9);
+  font-size:16px;
+  font-family:var(--body);
+  font-weight:600;
+  color:#243447;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+body.kids-playful .contact-form input:focus,
+body.kids-playful .contact-form select:focus,
+body.kids-playful .contact-form textarea:focus{
+  border-color:#FF8A4C;
+  box-shadow:0 0 0 4px rgba(255,138,76,.22);
+  outline:none;
+}
+body.kids-playful .contact-form .form-submit{
+  position:relative;
+  z-index:1;
+  width:100%;
+  justify-content:center;
+  margin-top:8px;
+  font-size:18px;
+  padding:16px 24px;
+}
+body.kids-playful .contact-location{
+  background:rgba(255,255,255,.75);
+  border:3px solid rgba(167,139,250,.3);
+  border-radius:22px;
+  padding:14px 16px;
+  box-shadow:0 10px 22px rgba(36,52,71,.08);
+}
+body.kids-playful .contact-location>span{
+  background:linear-gradient(135deg,#FF8A4C,#FFD166);
+  color:#243447;
+  border-radius:50%;
+  width:48px;height:48px;
+  font-size:20px;
+  box-shadow:0 8px 16px rgba(255,138,76,.28);
+}
+body.kids-playful .contact-location small{
+  font-family:var(--display);
+  color:#6b4fc4;
+  font-size:11px;
+  letter-spacing:.1em;
+}
+body.kids-playful .contact-location strong{
+  font-family:var(--display);
+  font-size:16px;
+  color:#243447;
 }
 
 /* Footer */
@@ -586,8 +1411,56 @@ body.kids-playful .site-footer{
   background:linear-gradient(160deg,#243447,#31506b);
   border-radius:40px 40px 0 0;margin-top:30px;
 }
-body.kids-playful .footer-signoff{font-family:var(--display)}
-body.kids-playful .signoff-accent{color:#FFD166}
+body.kids-playful .footer-brand p{
+  font-family:var(--body);
+  font-size:18px;
+  line-height:1.45;
+  color:#d5dae8;
+}
+body.kids-playful .footer-column{
+  gap:14px;
+}
+body.kids-playful .footer-column small{
+  font-family:var(--display);
+  font-size:13px;
+  letter-spacing:.12em;
+  color:#FFD166;
+  margin-bottom:4px;
+}
+body.kids-playful .footer-column a,
+body.kids-playful .footer-location{
+  font-family:var(--body);
+  font-size:16px;
+  font-weight:600;
+  color:#c8cede;
+  line-height:1.4;
+}
+body.kids-playful .footer-column a:hover{color:#FFD166}
+body.kids-playful .footer-signoff{
+  font-family:var(--display);
+  font-size:22px;
+  line-height:1.55;
+}
+body.kids-playful .signoff-accent{
+  color:#FFD166;
+  font-size:16px;
+}
+body.kids-playful .footer-bottom{
+  font-size:13px;
+  letter-spacing:.03em;
+  color:#aeb4c4;
+  gap:12px;
+}
+body.kids-playful .footer-bottom a{
+  font-size:13px;
+  color:#c8cede;
+}
+body.kids-playful .footer-bottom .back-top,
+body.kids-playful .back-to-top{
+  font-size:14px;
+  font-family:var(--display);
+  color:#FFD166;
+}
 
 /* Modal / toast */
 body.kids-playful .info-modal{border-radius:28px;border:4px solid #FFD166}

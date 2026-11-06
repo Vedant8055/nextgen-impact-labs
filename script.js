@@ -5,22 +5,35 @@ const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 $('#year').textContent = new Date().getFullYear();
 const progress = $('#scrollProgress');
 const header = $('.site-header');
+const menuToggle = $('#menuToggle');
+const mobileMenu = $('#mobileMenu');
+let lastScrollY = 0;
 const updateScroll = () => {
+  const y = window.scrollY;
   const max = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
-  header.classList.toggle('scrolled', window.scrollY > 12);
+  progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
+  header.classList.toggle('scrolled', y > 12);
+
+  const menuOpen = mobileMenu.classList.contains('open');
+  if (menuOpen || y < 60) {
+    header.classList.remove('is-hidden');
+  } else if (y > lastScrollY + 4) {
+    header.classList.add('is-hidden');
+  } else if (y < lastScrollY - 4) {
+    header.classList.remove('is-hidden');
+  }
+  lastScrollY = y;
 };
 window.addEventListener('scroll', updateScroll, { passive: true });
 updateScroll();
 
 // Mobile navigation
-const menuToggle = $('#menuToggle');
-const mobileMenu = $('#mobileMenu');
 menuToggle.addEventListener('click', () => {
   const open = mobileMenu.classList.toggle('open');
   menuToggle.classList.toggle('active', open);
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  if (open) header.classList.remove('is-hidden');
 });
 $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
@@ -178,3 +191,22 @@ $$('.pillar-image, .story-image, .hero-photo, .region-visual-bg').forEach(el => 
   probe.onerror = () => el.classList.add('image-fallback');
   probe.src = match[1];
 });
+
+// Hero Bounce Pop — play, hold 7s after finish, then repeat
+(() => {
+  const heroTitle = $('#heroTitle');
+  if (!heroTitle || !heroTitle.classList.contains('hero-dance')) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const DANCE_MS = 2200; // lines + em settle
+  const PAUSE_MS = 7000; // wait after finish before replay
+
+  const playDance = () => {
+    heroTitle.classList.remove('is-dancing');
+    void heroTitle.offsetWidth;
+    heroTitle.classList.add('is-dancing');
+    window.setTimeout(playDance, DANCE_MS + PAUSE_MS);
+  };
+
+  playDance();
+})();
