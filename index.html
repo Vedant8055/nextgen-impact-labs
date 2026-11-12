@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#FF8A4C" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no" />
   <meta name="description" content="NEXTGEN IMPACT LABS is a youth-led social innovation forum focused on education, environment, health and community wellbeing across Nashik and North Maharashtra." />
   <meta property="og:title" content="NEXTGEN IMPACT LABS — Young Minds. Local Action. Lasting Impact." />
   <meta property="og:description" content="A youth-led social innovation forum rooted in Nashik and looking towards a more inclusive, resilient future." />
@@ -13,13 +17,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css?v=86" />
+  <link rel="stylesheet" href="styles.css?v=109" />
 </head>
 <body class="kids-playful">
+  <div id="top" tabindex="-1"></div>
   <div class="scroll-progress" id="scrollProgress"></div>
   <div class="announcement"><span class="announcement-dot"></span><span>ROOTED IN NASHIK. THINKING BEYOND BOUNDARIES.</span><a href="#our-story">Discover the idea <span>↗</span></a></div>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="nav-rain" aria-hidden="true">
       <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
       <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -58,7 +63,7 @@
             <span class="dance-line" style="--i:2">for change<span class="period">.</span></span>
             <em>It can help create it.</em>
           </h1>
-          <p class="hero-lede">A movement of ideas, collaboration and meaningful action for stronger, healthier and more sustainable communities across Nashik and North Maharashtra.</p>
+          <p class="hero-lede dance-lede">A movement of ideas, collaboration and meaningful action for stronger, healthier and more sustainable communities across Nashik and North Maharashtra.</p>
           <div class="hero-actions">
             <a class="button button-gradient" href="#our-story">Explore our mission <span>↗</span></a>
             <a class="text-play" href="#impact"><span class="play-circle">▶</span> See how we work</a>
@@ -348,6 +353,6 @@
   <div class="modal-backdrop" id="infoModal" aria-hidden="true"><div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" aria-label="Close dialog" id="modalClose">×</button><div class="modal-kicker" id="modalKicker">FOCUS AREA</div><h2 id="modalTitle">Explore this focus</h2><p id="modalBody"></p><div class="modal-list" id="modalList"></div><div class="modal-footer"><span>PROPOSED AREA OF FOCUS</span><button class="button button-dark" id="modalAction">Start a conversation ↗</button></div></div></div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>

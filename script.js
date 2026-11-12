@@ -8,6 +8,34 @@ const header = $('.site-header');
 const menuToggle = $('#menuToggle');
 const mobileMenu = $('#mobileMenu');
 let lastScrollY = 0;
+
+// Mobile navigation — pin menu under sticky header + lock body scroll
+const syncMobileMenuTop = () => {
+  const announcement = document.querySelector('.announcement');
+  const top =
+    (announcement ? announcement.getBoundingClientRect().bottom : 0) +
+    (header.classList.contains('is-hidden') ? 0 : header.offsetHeight);
+  mobileMenu.style.top = `${Math.max(0, Math.round(top))}px`;
+};
+const setMobileMenuOpen = (open) => {
+  mobileMenu.classList.toggle('open', open);
+  menuToggle.classList.toggle('active', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  document.body.classList.toggle('nav-open', open);
+  if (open) {
+    header.classList.remove('is-hidden');
+    syncMobileMenuTop();
+  }
+};
+menuToggle.addEventListener('click', () => {
+  setMobileMenuOpen(!mobileMenu.classList.contains('open'));
+});
+$$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+  setMobileMenuOpen(false);
+}));
+window.addEventListener('resize', syncMobileMenuTop, { passive: true });
+
 const updateScroll = () => {
   const y = window.scrollY;
   const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -23,23 +51,11 @@ const updateScroll = () => {
     header.classList.remove('is-hidden');
   }
   lastScrollY = y;
+  if (menuOpen) syncMobileMenuTop();
 };
 window.addEventListener('scroll', updateScroll, { passive: true });
+syncMobileMenuTop();
 updateScroll();
-
-// Mobile navigation
-menuToggle.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  menuToggle.classList.toggle('active', open);
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  if (open) header.classList.remove('is-hidden');
-});
-$$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
-  mobileMenu.classList.remove('open');
-  menuToggle.classList.remove('active');
-  menuToggle.setAttribute('aria-expanded', 'false');
-}));
 
 // Desktop nav oval active state
 const desktopNavLinks = $$('.desktop-nav a');
@@ -51,12 +67,30 @@ desktopNavLinks.forEach(link => {
 });
 const syncNavFromHash = () => {
   const hash = location.hash;
-  if (!hash) return;
+  if (!hash || hash === '#top') {
+    desktopNavLinks.forEach(a => a.classList.remove('is-active'));
+    return;
+  }
   const match = desktopNavLinks.find(a => a.getAttribute('href') === hash);
   if (match) setActiveNav(match);
 };
 window.addEventListener('hashchange', syncNavFromHash);
 syncNavFromHash();
+
+// Logo / home links → scroll to homepage (top intro)
+const goHome = (event) => {
+  if (event) event.preventDefault();
+  setMobileMenuOpen(false);
+  header.classList.remove('is-hidden');
+  desktopNavLinks.forEach(a => a.classList.remove('is-active'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  if (history.replaceState) history.replaceState(null, '', '#top');
+  else location.hash = 'top';
+  const home = document.getElementById('top');
+  if (home) home.focus({ preventScroll: true });
+};
+$$('a.brand, a[href="#top"]').forEach(a => a.addEventListener('click', goHome));
 
 // Scroll reveals
 const revealObserver = new IntersectionObserver(entries => {
@@ -198,8 +232,8 @@ $$('.pillar-image, .story-image, .hero-photo, .region-visual-bg').forEach(el => 
   if (!heroTitle || !heroTitle.classList.contains('hero-dance')) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const DANCE_MS = 2200; // lines + em settle
-  const PAUSE_MS = 7000; // wait after finish before replay
+  const DANCE_MS = 3000; // lines + em + hopscotch lede settle
+  const PAUSE_MS = 11000; // wait after finish before replay
 
   const playDance = () => {
     heroTitle.classList.remove('is-dancing');
