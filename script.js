@@ -1,246 +1,127 @@
-const $ = (s, root=document) => root.querySelector(s);
-const $$ = (s, root=document) => [...root.querySelectorAll(s)];
-
-// Current year and scroll progress
-$('#year').textContent = new Date().getFullYear();
-const progress = $('#scrollProgress');
-const header = $('.site-header');
-const menuToggle = $('#menuToggle');
-const mobileMenu = $('#mobileMenu');
-let lastScrollY = 0;
-
-// Mobile navigation — pin menu under sticky header + lock body scroll
-const syncMobileMenuTop = () => {
-  const announcement = document.querySelector('.announcement');
-  const top =
-    (announcement ? announcement.getBoundingClientRect().bottom : 0) +
-    (header.classList.contains('is-hidden') ? 0 : header.offsetHeight);
-  mobileMenu.style.top = `${Math.max(0, Math.round(top))}px`;
-};
-const setMobileMenuOpen = (open) => {
-  mobileMenu.classList.toggle('open', open);
-  menuToggle.classList.toggle('active', open);
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  document.body.classList.toggle('nav-open', open);
-  if (open) {
-    header.classList.remove('is-hidden');
-    syncMobileMenuTop();
-  }
-};
-menuToggle.addEventListener('click', () => {
-  setMobileMenuOpen(!mobileMenu.classList.contains('open'));
-});
-$$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
-  setMobileMenuOpen(false);
-}));
-window.addEventListener('resize', syncMobileMenuTop, { passive: true });
-
-const updateScroll = () => {
-  const y = window.scrollY;
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
-  header.classList.toggle('scrolled', y > 12);
-
-  const menuOpen = mobileMenu.classList.contains('open');
-  if (menuOpen || y < 60) {
-    header.classList.remove('is-hidden');
-  } else if (y > lastScrollY + 4) {
-    header.classList.add('is-hidden');
-  } else if (y < lastScrollY - 4) {
-    header.classList.remove('is-hidden');
-  }
-  lastScrollY = y;
-  if (menuOpen) syncMobileMenuTop();
-};
-window.addEventListener('scroll', updateScroll, { passive: true });
-syncMobileMenuTop();
-updateScroll();
-
-// Desktop nav oval active state
-const desktopNavLinks = $$('.desktop-nav a');
-const setActiveNav = (link) => {
-  desktopNavLinks.forEach(a => a.classList.toggle('is-active', a === link));
-};
-desktopNavLinks.forEach(link => {
-  link.addEventListener('click', () => setActiveNav(link));
-});
-const syncNavFromHash = () => {
-  const hash = location.hash;
-  if (!hash || hash === '#top') {
-    desktopNavLinks.forEach(a => a.classList.remove('is-active'));
-    return;
-  }
-  const match = desktopNavLinks.find(a => a.getAttribute('href') === hash);
-  if (match) setActiveNav(match);
-};
-window.addEventListener('hashchange', syncNavFromHash);
-syncNavFromHash();
-
-// Logo / home links → scroll to homepage (top intro)
-const goHome = (event) => {
-  if (event) event.preventDefault();
-  setMobileMenuOpen(false);
-  header.classList.remove('is-hidden');
-  desktopNavLinks.forEach(a => a.classList.remove('is-active'));
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  if (history.replaceState) history.replaceState(null, '', '#top');
-  else location.hash = 'top';
-  const home = document.getElementById('top');
-  if (home) home.focus({ preventScroll: true });
-};
-$$('a.brand, a[href="#top"]').forEach(a => a.addEventListener('click', goHome));
-
-// Scroll reveals
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-$$('.reveal').forEach(el => revealObserver.observe(el));
-
-// Information modal for focus areas and idea cards
-const pillarDetails = {
-  education: {
-    kicker: 'PILLAR 01 · LEARN', title: 'Education & digital empowerment',
-    body: 'Learning opens doors. This focus area explores ways to support digital literacy, STEM curiosity, practical skills and more inclusive learning opportunities. Specific programmes will be shaped with educators and community partners.',
-    tags: ['Digital literacy', 'STEM awareness', 'Mentorship', 'Future-ready skills', 'Responsible technology']
-  },
-  environment: {
-    kicker: 'PILLAR 02 · PROTECT', title: 'Environment & climate action',
-    body: 'A healthier future depends on how we care for the resources around us. This focus area explores environmental awareness, water conservation, waste reduction, tree care and sustainable everyday choices.',
-    tags: ['Water conservation', 'Waste awareness', 'Tree care', 'Climate education', 'Sustainable living']
-  },
-  health: {
-    kicker: 'PILLAR 03 · WELLBEING', title: 'Health & community wellbeing',
-    body: 'Wellbeing grows when people can access useful information and supportive communities. This focus area may include age-appropriate awareness around preventive health, hygiene, inclusion and community wellbeing.',
-    tags: ['Health awareness', 'Hygiene', 'Inclusion', 'Preventive education', 'Community wellbeing']
-  },
-  innovation: {
-    kicker: 'PILLAR 04 · IMAGINE', title: 'Youth innovation & social entrepreneurship',
-    body: 'Young people can help frame problems and explore fresh approaches. This focus area creates room for ideation, mentorship, prototypes, community problem-solving and responsible social entrepreneurship.',
-    tags: ['Innovation challenges', 'Social entrepreneurship', 'Prototyping', 'Mentorship', 'Community solutions']
-  },
-  learning: {
-    kicker: 'IDEA EXPLORER · LEARNING', title: 'Digital confidence for a changing world',
-    body: 'An area to explore how young people can build confidence with digital tools, learn to evaluate information and discover future-facing skills. This is a possible programme theme, not a completed NextGen project.',
-    tags: ['Digital literacy', 'Online safety', 'STEM activities', 'Creative problem-solving']
-  },
-  planet: {
-    kicker: 'IDEA EXPLORER · PLANET', title: 'Small actions for a healthier planet',
-    body: 'A possible focus on practical environmental learning: understanding water, reducing waste, caring for green spaces and encouraging sustainable habits with communities.',
-    tags: ['Water awareness', 'Waste reduction', 'Tree care', 'Sustainable habits']
-  },
-  wellbeing: {
-    kicker: 'IDEA EXPLORER · WELLBEING', title: 'Knowledge that supports wellbeing',
-    body: 'A possible focus on clear, age-appropriate information about health, hygiene, inclusion and everyday wellbeing, delivered with qualified and responsible partners where required.',
-    tags: ['Health information', 'Hygiene awareness', 'Inclusion', 'Community support']
-  },
-  community: {
-    kicker: 'IDEA EXPLORER · COMMUNITY', title: 'Learning together with local communities',
-    body: 'A possible focus on connecting young people with local mentors, neighbourhood partners and community voices so ideas are shaped through listening, collaboration and shared responsibility.',
-    tags: ['Community listening', 'Local partnerships', 'Shared learning', 'Youth voice']
-  },
-  mentorship: {
-    kicker: 'IDEA EXPLORER · MENTORSHIP', title: 'Guided paths for young changemakers',
-    body: 'A possible focus on pairing curiosity with responsible adult guidance, peer learning and mentorship so young people can explore challenges thoughtfully and safely.',
-    tags: ['Mentorship', 'Guided exploration', 'Peer learning', 'Safeguarding']
-  }
-};
-const modal = $('#infoModal');
-function openModal(key) {
-  const data = pillarDetails[key];
-  if (!data) return;
-  $('#modalKicker').textContent = data.kicker;
-  $('#modalTitle').textContent = data.title;
-  $('#modalBody').textContent = data.body;
-  $('#modalList').innerHTML = data.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join('');
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  $('#modalClose').focus();
-}
-function closeModal() {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-function escapeHtml(value) {
-  return value.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-}
-$$('[data-open-pillar]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.openPillar)));
-$$('[data-story]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.story)));
-$('#modalClose').addEventListener('click', closeModal);
-modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
-document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
-$('#modalAction').addEventListener('click', () => { closeModal(); location.hash = '#contact'; });
-
-// Theme filters
-$$('.filter-btn').forEach(button => button.addEventListener('click', () => {
-  $$('.filter-btn').forEach(btn => btn.classList.toggle('active', btn === button));
-  const filter = button.dataset.filter;
-  $$('.story-card').forEach(card => card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter));
-}));
-
-// Involvement actions pre-select the enquiry topic
-$$('[data-open-form]').forEach(button => button.addEventListener('click', () => {
-  const wanted = button.dataset.openForm;
-  const select = $('select[name="interest"]');
-  const map = { 'Volunteer':'Volunteering', 'Mentor':'Mentorship', 'Partner':'Institutional partnership', 'Share an idea':'Sharing an idea' };
-  select.value = map[wanted] || '';
-  $('#contactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  setTimeout(() => $('input[name="name"]').focus({ preventScroll: true }), 500);
-  showToast(`${wanted}: tell us a little more in the enquiry form.`);
-}));
-
-// Prototype-only contact form: deliberately does not transmit personal data
-$('#contactForm').addEventListener('submit', event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  if (!form.reportValidity()) return;
-  $('#formSuccess').classList.add('visible');
-  form.reset();
-  showToast('Demo interaction complete — no email was sent.');
-});
-
-let toastTimer;
-function showToast(message) {
-  const toast = $('#toast');
-  toast.textContent = message;
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 3300);
-}
-
-// Graceful image fallback: keep each card visually rich if a remote image is unavailable.
-$$('.pillar-image, .story-image, .hero-photo, .region-visual-bg').forEach(el => {
-  const image = getComputedStyle(el).backgroundImage;
-  const match = image.match(/url\(["']?(.*?)["']?\)/);
-  if (!match) return;
-  const probe = new Image();
-  probe.onerror = () => el.classList.add('image-fallback');
-  probe.src = match[1];
-});
-
-// Hero Bounce Pop — play, hold 7s after finish, then repeat
 (() => {
-  const heroTitle = $('#heroTitle');
-  if (!heroTitle || !heroTitle.classList.contains('hero-dance')) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.primary-nav');
+  const navLinks = nav ? nav.querySelectorAll('a') : [];
 
-  const DANCE_MS = 3000; // lines + em + hopscotch lede settle
-  const PAUSE_MS = 11000; // wait after finish before replay
+  if (menuToggle && nav) {
+    const closeMenu = () => {
+      nav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+    };
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  }
 
-  const playDance = () => {
-    heroTitle.classList.remove('is-dancing');
-    void heroTitle.offsetWidth;
-    heroTitle.classList.add('is-dancing');
-    window.setTimeout(playDance, DANCE_MS + PAUSE_MS);
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  }
+
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  // Count-up animation is intentionally limited to the verified platform snapshot.
+  const counters = document.querySelectorAll('.count-up[data-count]');
+  const animateCounter = element => {
+    const target = Number(element.dataset.count);
+    if (!Number.isFinite(target)) return;
+    const duration = 900;
+    const start = performance.now();
+    const tick = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = String(Math.round(target * eased)).padStart(2, '0');
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   };
+  if ('IntersectionObserver' in window && counters.length) {
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.55 });
+    counters.forEach(counter => counterObserver.observe(counter));
+  }
 
-  playDance();
+  // Subtle reveal motion, with a graceful no-JS / reduced-motion fallback.
+  const revealTargets = document.querySelectorAll('.mission-card, .snapshot-stat, .leader-card, .pillar-card, .project-card, .process-step, .resource-card, .press-card, .partner-card');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('reveal-ready');
+    revealTargets.forEach(item => item.classList.add('reveal'));
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(item => revealObserver.observe(item));
+  }
+
+  // Accessible project gallery lightbox.
+  const galleryItems = Array.from(document.querySelectorAll('[data-gallery]'));
+  const lightbox = document.querySelector('.lightbox');
+  if (galleryItems.length && lightbox) {
+    const lightboxImage = lightbox.querySelector('img');
+    const caption = lightbox.querySelector('figcaption');
+    const closeButton = lightbox.querySelector('.lightbox-close');
+    const prevButton = lightbox.querySelector('.lightbox-prev');
+    const nextButton = lightbox.querySelector('.lightbox-next');
+    let currentIndex = 0;
+    let previousFocus = null;
+    const getItemContent = index => {
+      const item = galleryItems[index];
+      const img = item.querySelector('img');
+      const title = item.querySelector('.gallery-caption strong')?.textContent || img.alt;
+      const detail = item.querySelector('.gallery-caption small')?.textContent || '';
+      return { src: img.currentSrc || img.src, alt: img.alt, caption: detail ? `${title} — ${detail}` : title };
+    };
+    const showItem = index => {
+      currentIndex = (index + galleryItems.length) % galleryItems.length;
+      const content = getItemContent(currentIndex);
+      lightboxImage.src = content.src;
+      lightboxImage.alt = content.alt;
+      caption.textContent = content.caption;
+    };
+    const open = index => {
+      previousFocus = document.activeElement;
+      showItem(index);
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    };
+    const close = () => {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+    };
+    galleryItems.forEach((item, index) => item.addEventListener('click', () => open(index)));
+    closeButton.addEventListener('click', close);
+    prevButton.addEventListener('click', () => showItem(currentIndex - 1));
+    nextButton.addEventListener('click', () => showItem(currentIndex + 1));
+    lightbox.addEventListener('click', event => { if (event.target === lightbox) close(); });
+    document.addEventListener('keydown', event => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft') showItem(currentIndex - 1);
+      if (event.key === 'ArrowRight') showItem(currentIndex + 1);
+    });
+  }
 })();
