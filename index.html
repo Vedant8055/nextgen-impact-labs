@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1f8a2e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="description" content="NextGen Impact Labs is a youth-led social innovation forum creating space for young changemakers and community-minded ideas across Nashik and North Maharashtra.">
   <meta property="og:title" content="NextGen Impact Labs — Young ideas. Real-world possibility.">
   <meta property="og:description" content="A youth-led social innovation forum founded by Kiyansh Kapse and Yuvaan Kedare.">
   <meta property="og:type" content="website">
   <title>NextGen Impact Labs — Young ideas. Real-world possibility.</title>
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,800..900&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,800..900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script defer src="script.js?v=6"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,7 +32,7 @@
   <header class="site-header" id="top">
     <div class="container nav-shell">
       <a class="brand" href="#top" aria-label="NextGen Impact Labs home">
-        <img class="brand-logo" src="assets/logo.png" alt="NextGen Impact Labs — Curiosity Meets Change.">
+        <img class="brand-logo" src="assets/logo.png?v=2" alt="NextGen Impact Labs — Curiosity Meets Change.">
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
@@ -39,8 +42,9 @@
       <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
         <div class="nav-links">
           <a href="#about">Our story</a>
-          <a href="#leaders">Young leaders</a>
           <a href="#impact">Impact</a>
+          <a href="#leaders">Young leaders</a>
+          <a href="#guidance">Guidance</a>
           <a href="#initiatives">Initiatives</a>
           <a href="#resources">Resources</a>
         </div>
@@ -61,9 +65,27 @@
           <h1>
             <span class="hero-line hero-line-1">Big ideas. <svg class="title-doodle" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M6 8l4 4M58 40l-5 2M10 46l5-3" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span>
             <span class="hero-line hero-line-2 title-highlight">Brave young minds.</span>
-            <span class="hero-line hero-line-3">Better futures!</span>
+            <span class="hero-line hero-line-3">Better future!</span>
           </h1>
           <p class="hero-intro">A new generation of changemakers is asking better questions, building thoughtful solutions and turning curiosity into action across Nashik and North Maharashtra.</p>
+          <div class="impact-ticker" aria-label="Real-time impact ticker">
+            <div class="impact-stat">
+              <strong class="count-up" data-count="1200" data-suffix="+">1,200+</strong>
+              <span>Beneficiaries reached across Nashik &amp; surrounding villages</span>
+            </div>
+            <div class="impact-stat">
+              <strong class="count-up" data-count="500" data-suffix="+">500+</strong>
+              <span>Native seed-bombs dispersed &amp; urban trees planted</span>
+            </div>
+            <div class="impact-stat">
+              <strong class="count-up" data-count="150" data-suffix="+">150+</strong>
+              <span>Learning kits distributed to peer students</span>
+            </div>
+            <div class="impact-stat">
+              <strong>SDG 3, 4, 13, 15</strong>
+              <span>Active UN SDGs targeted</span>
+            </div>
+          </div>
           <div class="hero-actions">
             <a class="button button-yellow" href="#initiatives">Explore our initiatives <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#about">Discover our purpose <span aria-hidden="true">→</span></a>
@@ -164,7 +186,57 @@
             <p class="snapshot-lede">Our platform is taking shape around young leadership and practical, planet-conscious ideas. Here is the current snapshot of what is featured.</p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="multi-impact-section section-pad" id="multi-impact" aria-label="Multi-Impact Core focus areas">
+      <div class="container">
+        <div class="multi-impact-heading">
+          <div>
+            <span class="section-kicker multi-impact-kicker">MULTI-IMPACT CORE</span>
+            <h2>Focus <span>areas</span> that shape our work.</h2>
+          </div>
+          <p>Four connected pathways where young leadership meets climate action, inclusion, health and global collaboration.</p>
+        </div>
+        <div class="multi-impact-grid">
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-index">01</span>
+              <span class="focus-sdg">SDG 13 &amp; 15</span>
+            </div>
+            <h3>Eco-Stewardship &amp; Local Climate Action</h3>
+            <p>Micro-recycling drives, urban seed-bombing across Nashik’s green belts, and rainwater awareness campaigns that put climate care into everyday youth action.</p>
+          </article>
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-index">02</span>
+              <span class="focus-sdg">SDG 4 &amp; 10</span>
+            </div>
+            <h3>Inclusive Literacy &amp; Peer Mentorship</h3>
+            <p>Youth-to-youth digital literacy sessions, storybook distribution, and peer support for kids with diverse learning needs—so no learner is left behind.</p>
+          </article>
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-index">03</span>
+              <span class="focus-sdg">SDG 3 &amp; 12</span>
+            </div>
+            <h3>Youth Health &amp; Sustainable Living</h3>
+            <p>Community gardens, local awareness on indigenous nutrition such as millets, and clean-water drives that connect healthy living with sustainable choices.</p>
+          </article>
+          <article class="focus-card">
+            <div class="focus-card-top">
+              <span class="focus-index">04</span>
+              <span class="focus-sdg">GLOBAL</span>
+            </div>
+            <h3>Global Youth Networking</h3>
+            <p>Aligning local field results with international platforms, including the UN #ActNow initiative and regional youth climate coalitions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="snapshot-about-section section-pad">
+      <div class="container">
         <div class="snapshot-about">
           <div>
             <h3>The <span>snapshot</span></h3>
@@ -175,26 +247,6 @@
             <img src="assets/goda-yuva-feature.webp" alt="Yuvaan presenting the Goda Yuva river-bed model" loading="lazy">
           </div>
         </div>
-
-        <div class="snapshot-grid" aria-label="Current platform snapshot">
-          <div class="snapshot-stat">
-            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="9.5" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.6-3.4 2.8-5.2 5.5-5.2s4.9 1.8 5.5 5.2M14.5 14.6c.8-.5 1.6-.7 2.5-.7 2.2 0 3.8 1.5 4.3 4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            <strong class="count-up" data-count="2">02</strong><span>Young co-founders</span>
-          </div>
-          <div class="snapshot-stat">
-            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <strong class="count-up" data-count="2">02</strong><span>Featured initiatives</span>
-          </div>
-          <div class="snapshot-stat">
-            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg>
-            <strong class="count-up" data-count="4">04</strong><span>Impact focus pillars</span>
-          </div>
-          <div class="snapshot-stat">
-            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
-            <strong>Nashik</strong><span>Where it all begins</span>
-          </div>
-        </div>
-        <p class="snapshot-disclaimer">These figures describe the founders, initiatives and focus areas currently featured on this website. They are not beneficiary, reach or outcome statistics.</p>
       </div>
     </section>
 
@@ -205,12 +257,24 @@
       </div>
       <div class="container leader-grid">
         <article class="leader-card leader-card-kiyansh">
-          <div class="leader-image-wrap"><img src="assets/jalkiyan-feature.webp" alt="Kiyansh presenting the JalKiyan water concept beside its demonstration model" loading="lazy"><span class="leader-number">01</span><span class="leader-topic">WATER INNOVATION</span></div>
-          <div class="leader-info"><div class="leader-role">CO-FOUNDER · YOUTH INNOVATOR</div><h3>Kiyansh Kapse</h3><div class="leader-meta"><span>Grade 6</span><span class="meta-separator"></span><span>JalKiyan</span></div><p>Driven by an interest in clean water and healthier riverbeds, Kiyansh presents JalKiyan—a visual, model-based exploration of purposeful water management.</p><a class="card-link" href="#jalkiyan">Explore JalKiyan <span>↗</span></a></div>
+          <div class="leader-image-wrap"><img src="assets/jalkiyan-feature.webp" alt="Kiyansh presenting the JalKiyan water concept beside its demonstration model" loading="lazy"><span class="leader-number">01</span><span class="leader-topic">ECO-INNOVATION</span></div>
+          <div class="leader-info">
+            <div class="leader-role">CO-FOUNDER &amp; YOUTH DIRECTOR OF ECO-INNOVATION</div>
+            <h3>Kiyansh Kapse <span class="leader-age">(Age 11)</span></h3>
+            <p class="leader-focus"><strong>Focus:</strong> Leading climate action, biodiversity mapping, and micro-recycling tech.</p>
+            <blockquote class="leader-quote">“Change doesn't require an adult age; it requires consistent action. We are proving that young people can build scalable solutions for our region today.”</blockquote>
+            <a class="card-link" href="#jalkiyan">Explore JalKiyan <span>↗</span></a>
+          </div>
         </article>
         <article class="leader-card leader-card-yuvaan">
-          <div class="leader-image-wrap"><img src="assets/goda-yuva-feature.webp" alt="Yuvaan presenting the Goda Yuva river-bed and groundwater concept" loading="lazy"><span class="leader-number">02</span><span class="leader-topic">RIVER ECOLOGY</span></div>
-          <div class="leader-info"><div class="leader-role">CO-FOUNDER · YOUTH INNOVATOR</div><h3>Yuvaan Kedare</h3><div class="leader-meta"><span>Grade 3</span><span class="meta-separator"></span><span>Goda Yuva</span></div><p>With Goda Yuva, Yuvaan brings attention to river health, groundwater recharge, biodiversity and the importance of keeping our rivers alive.</p><a class="card-link" href="#goda-yuva">Explore Goda Yuva <span>↗</span></a></div>
+          <div class="leader-image-wrap"><img src="assets/goda-yuva-feature.webp" alt="Yuvaan presenting the Goda Yuva river-bed and groundwater concept" loading="lazy"><span class="leader-number">02</span><span class="leader-topic">PEER INCLUSION</span></div>
+          <div class="leader-info">
+            <div class="leader-role">CO-FOUNDER &amp; YOUTH LEAD FOR PEER INCLUSION</div>
+            <h3>Yuvaan Kedare <span class="leader-age">(Age 8)</span></h3>
+            <p class="leader-focus"><strong>Focus:</strong> Spearheading inclusive learning drives, community health awareness, and youth outreach.</p>
+            <blockquote class="leader-quote">“Every child deserves the tools to learn and a clean environment to grow up in. Our mission is to make sure no kid is left behind.”</blockquote>
+            <a class="card-link" href="#goda-yuva">Explore Goda Yuva <span>↗</span></a>
+          </div>
         </article>
       </div>
       <div class="container leaders-note"><span class="note-flower" aria-hidden="true">✿</span><p>Leadership is not measured by age. It is revealed by curiosity, care and the willingness to take the first step.</p></div>
@@ -229,8 +293,26 @@
       </div>
     </section>
 
+    <section class="guidance-section section-pad" id="guidance" aria-label="Guidance">
+      <div class="container guidance-heading">
+        <div>
+          <span class="section-kicker">05 / GUIDANCE</span>
+          <h2>Mom and<br><span class="green-italic">Guiding force.</span></h2>
+        </div>
+        <p>Behind every brave young mind is a steady hand. Meet Dr. Sonam Kapse—mentor, mother and the guiding force shaping NextGen Impact Labs.</p>
+      </div>
+      <div class="container guidance-gallery">
+        <figure class="guidance-frame">
+          <img src="assets/dr-sonam-profile.jpg" alt="Profile of Dr. Sonam Kapse — social innovator, TEDx speaker, researcher and entrepreneur" loading="lazy">
+        </figure>
+        <figure class="guidance-frame">
+          <img src="assets/dr-sonam-impact.jpg" alt="Creating Impact Across India — initiatives and awards led by Dr. Sonam Kapse" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
     <section class="initiatives-section section-pad" id="initiatives">
-      <div class="container initiatives-heading"><div><span class="section-kicker">05 / THE INITIATIVES</span><h2>Meet the ideas<br>making <span class="green-italic">waves.</span></h2></div><p>Two young innovators. Two thoughtful concepts. A shared belief that local questions deserve creative attention.</p></div>
+      <div class="container initiatives-heading"><div><span class="section-kicker">06 / THE INITIATIVES</span><h2>Meet the ideas<br>making <span class="green-italic">waves.</span></h2></div><p>Two young innovators. Two thoughtful concepts. A shared belief that local questions deserve creative attention.</p></div>
       <div class="container project-list">
         <article class="project-card project-goda" id="goda-yuva">
           <div class="project-image"><img src="assets/goda-yuva-poster.webp" alt="Goda Yuva project poster showing Yuvaan Kedare and a river-health demonstration model" loading="lazy"><span class="project-image-tag">YOUTH PROJECT 01</span></div>
@@ -253,7 +335,7 @@
 
     <section class="process-section section-pad">
       <div class="container process-grid">
-        <div class="process-title"><span class="section-kicker">06 / HOW WE GROW IDEAS</span><h2>From a curious<br>question to a<br><span class="green-italic">shared possibility.</span></h2><p>Good ideas grow through listening, experimenting and learning together.</p></div>
+        <div class="process-title"><span class="section-kicker">07 / HOW WE GROW IDEAS</span><h2>From a curious<br>question to a<br><span class="green-italic">shared possibility.</span></h2><p>Good ideas grow through listening, experimenting and learning together.</p></div>
         <div class="process-steps">
           <div class="process-step"><span class="step-number">01</span><div><h3>Notice</h3><p>Look closely at the world around us. Ask what could work better.</p></div><span class="step-symbol">⌕</span></div>
           <div class="process-step"><span class="step-number">02</span><div><h3>Imagine</h3><p>Explore possibilities and shape a thoughtful response to the challenge.</p></div><span class="step-symbol">✳</span></div>
@@ -264,7 +346,7 @@
     </section>
 
     <section class="gallery-section section-pad" id="gallery">
-      <div class="container gallery-heading"><div><span class="section-kicker">07 / MOMENTS & MODELS</span><h2>Ideas are better<br><span class="green-italic">when shared.</span></h2></div><p>A closer look at the young innovators, their project models and the conversations behind each idea.</p></div>
+      <div class="container gallery-heading"><div><span class="section-kicker">08 / MOMENTS & MODELS</span><h2>Ideas are better<br><span class="green-italic">when shared.</span></h2></div><p>A closer look at the young innovators, their project models and the conversations behind each idea.</p></div>
       <div class="container gallery-grid">
         <button class="gallery-item gallery-item-tall" type="button" data-gallery="0" aria-label="Open Goda Yuva project photograph"><img src="assets/goda-yuva-showcase.webp" alt="Yuvaan presenting Goda Yuva at a project exhibition" loading="lazy"><span class="gallery-caption"><strong>Goda Yuva</strong><small>Keeping our rivers young</small></span><span class="gallery-open">↗</span></button>
         <button class="gallery-item gallery-item-wide" type="button" data-gallery="1" aria-label="Open JalKiyan project photograph"><img src="assets/jalkiyan-showcase.webp" alt="Kiyansh discussing the JalKiyan water model with a visitor" loading="lazy"><span class="gallery-caption"><strong>JalKiyan</strong><small>Clean purposeful water</small></span><span class="gallery-open">↗</span></button>
@@ -275,7 +357,7 @@
 
     <section class="global-section section-pad" id="global">
       <div class="container global-grid">
-        <div class="global-copy"><span class="section-kicker section-kicker-light">08 / GLOBAL ENGAGEMENT</span><h2>Local ideas.<br><span>Global goals.</span></h2><p>Our focus areas connect with themes found in the United Nations Sustainable Development Goals. These connections offer a shared language for learning and action—not a claim of UN affiliation or endorsement.</p><a class="button button-white" href="#resources">Explore our resource hub <span>↗</span></a></div>
+        <div class="global-copy"><span class="section-kicker section-kicker-light">09 / GLOBAL ENGAGEMENT</span><h2>Local ideas.<br><span>Global goals.</span></h2><p>Our focus areas connect with themes found in the United Nations Sustainable Development Goals. These connections offer a shared language for learning and action—not a claim of UN affiliation or endorsement.</p><a class="button button-white" href="#resources">Explore our resource hub <span>↗</span></a></div>
         <div class="sdg-panel"><div class="sdg-panel-top"><span>THEMES WE ALIGN WITH</span><span class="sdg-spark">✳</span></div><div class="sdg-list">
           <div class="sdg-item"><span class="sdg-number sdg-4">04</span><div><strong>Quality Education</strong><small>Learning, creativity and youth participation</small></div><span class="sdg-check">↗</span></div>
           <div class="sdg-item"><span class="sdg-number sdg-6">06</span><div><strong>Clean Water & Sanitation</strong><small>Water stewardship and healthier water systems</small></div><span class="sdg-check">↗</span></div>
@@ -285,7 +367,7 @@
     </section>
 
     <section class="resources-section section-pad" id="resources">
-      <div class="container resources-heading"><div><span class="section-kicker">09 / TRANSPARENCY & DATA HUB</span><h2>Open ideas.<br><span class="green-italic">Clear information.</span></h2></div><p>As the forum grows, this space will bring together the documents, data and stories that help everyone follow the work.</p></div>
+      <div class="container resources-heading"><div><span class="section-kicker">10 / TRANSPARENCY & DATA HUB</span><h2>Open ideas.<br><span class="green-italic">Clear information.</span></h2></div><p>As the forum grows, this space will bring together the documents, data and stories that help everyone follow the work.</p></div>
       <div class="container resources-grid">
         <article class="resource-card resource-report"><div class="resource-icon">▤</div><span class="resource-label">DOCUMENTS</span><h3>Annual Reports</h3><p>Updates, reflections and organisational reports will be published here when available.</p><span class="resource-status">PUBLISHING SOON</span></article>
         <article class="resource-card resource-data"><div class="resource-icon">⌘</div><span class="resource-label">OPEN INFORMATION</span><h3>Open Datasets</h3><p>Relevant project information and verified datasets will be shared transparently as they are prepared.</p><span class="resource-status">PUBLISHING SOON</span></article>
@@ -308,7 +390,7 @@
 
   <footer class="site-footer">
     <div class="container footer-main">
-      <a class="brand footer-brand" href="#top" aria-label="NextGen Impact Labs home"><img class="brand-logo" src="assets/logo.png" alt="NextGen Impact Labs — Curiosity Meets Change."></a>
+      <a class="brand footer-brand" href="#top" aria-label="NextGen Impact Labs home"><img class="brand-logo" src="assets/logo.png?v=2" alt="NextGen Impact Labs — Curiosity Meets Change."></a>
       <p class="footer-motto">A youth-led social innovation forum.<br><strong>Young ideas. Meaningful possibilities.</strong></p>
       <div class="footer-links"><a href="#about">Our story</a><a href="#leaders">Young leaders</a><a href="#initiatives">Initiatives</a><a href="#resources">Transparency hub</a></div>
     </div>
