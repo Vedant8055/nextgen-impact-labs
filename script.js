@@ -92,9 +92,12 @@
   if (year) year.textContent = String(new Date().getFullYear());
 
   const counters = document.querySelectorAll('.count-up[data-count]');
+  const counterFrames = new WeakMap();
   const animateCounter = element => {
     const target = Number(element.dataset.count);
     if (!Number.isFinite(target)) return;
+    const previous = counterFrames.get(element);
+    if (previous) cancelAnimationFrame(previous);
     const suffix = element.dataset.suffix || '';
     const duration = 2400;
     const start = performance.now();
@@ -107,22 +110,34 @@
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       element.textContent = formatValue(target * eased);
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) {
+        counterFrames.set(element, requestAnimationFrame(tick));
+      } else {
+        counterFrames.delete(element);
+      }
     };
-    requestAnimationFrame(tick);
+    counterFrames.set(element, requestAnimationFrame(tick));
+  };
+  const replayCounters = () => counters.forEach(animateCounter);
+  let counterLoopStarted = false;
+  const startCounterLoop = () => {
+    if (counterLoopStarted || !counters.length) return;
+    counterLoopStarted = true;
+    replayCounters();
+    setInterval(replayCounters, 10000);
   };
   if ('IntersectionObserver' in window && counters.length) {
     const counterObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
+          startCounterLoop();
+          counterObserver.disconnect();
         }
       });
     }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
     counters.forEach(counter => counterObserver.observe(counter));
   } else {
-    counters.forEach(animateCounter);
+    startCounterLoop();
   }
 
   // Reveal motion — skip hero ticker stats; mark visible reliably.

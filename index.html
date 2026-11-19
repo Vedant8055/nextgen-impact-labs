@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,800..900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
-  <script defer src="script.js?v=10"></script>
+  <link rel="stylesheet" href="styles.css?v=39">
+  <script defer src="script.js?v=39"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +41,7 @@
 
       <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
         <div class="nav-links">
+          <a href="#home">Home</a>
           <a href="#about">Our story</a>
           <a href="#impact">Impact</a>
           <a href="#leaders">Young leaders</a>
@@ -54,7 +55,7 @@
   </header>
 
   <main id="main">
-    <section class="hero-section">
+    <section class="hero-section" id="home">
       <svg class="hero-doodle doodle-loop" viewBox="0 0 220 160" fill="none" aria-hidden="true"><path d="M8 120c40-6 70-30 62-62-7-27-44-25-44 2 0 38 66 52 104 20 30-25 40-62 82-58" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
       <svg class="hero-doodle doodle-squiggle" viewBox="0 0 260 60" fill="none" aria-hidden="true"><path d="M6 40c20-30 40-30 56 0s36 30 56 0 40-30 56 0 36 30 56 0" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
 
@@ -113,10 +114,9 @@
         </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="idea-strip" aria-label="What we focus on">
-      <svg class="strip-edge strip-edge-top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34l40-10 34 14 46-18 38 12 52-16 30 18 48-14 36 10 58-20 30 16 44-8 40 14 56-18 34 12 50-10 38 16 46-20 32 14 54-12 40 18 48-16 36 10 52-18 30 16 46-8 42 12 50-16 34 14 44-12 38 10L1440 26V60H0Z" fill="#fff"/></svg>
-      <svg class="strip-edge strip-edge-bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28l46-14 38 12 52-10 34 16 44-18 40 10 56-14 30 18 50-12 36 8 48-16 42 14 54-10 32 16 46-18 38 10 52-14 34 12 48-8 40 16 56-16 30 10 44-12 38 16 50-14 36 12 46-10 42 14 34-12 50 10L1440 30V60H0Z" fill="#fff"/></svg>
       <div class="container idea-strip-inner">
         <div class="strip-chip"><span class="chip-icon chip-water" aria-hidden="true">≈</span>Water &amp; river health</div>
         <div class="strip-chip"><span class="chip-icon chip-ground" aria-hidden="true">↓</span>Groundwater recharge</div>
@@ -124,6 +124,7 @@
         <div class="strip-chip"><span class="chip-icon chip-yellow" aria-hidden="true">✳</span>Youth-led innovation</div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="about-section section-pad" id="about">
       <div class="container about-grid">
@@ -164,32 +165,41 @@
         </article>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="snapshot-section" id="impact">
-      <div class="container">
-        <div class="snapshot-banner">
-          <img class="snapshot-banner-blur" src="assets/snapshot-banner.jpg" alt="" aria-hidden="true" loading="lazy">
-          <span class="snapshot-kicker">02 / The snapshot</span>
-          <svg class="snapshot-doodle doodle-leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
-          <svg class="snapshot-doodle doodle-ring" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-          <h2 class="snapshot-title">A little momentum.<br><span>Lots of possibility.</span></h2>
-          <figure class="snapshot-photo">
-            <img src="assets/snapshot-banner.jpg" alt="Kiyansh Kapse and Yuvaan Kedare standing together behind their Goda Yuva and JalKiyan water models" loading="lazy">
-          </figure>
-          <div class="snapshot-pill pill-founders">
-            <span class="founder-avatars" aria-hidden="true"><span class="founder-avatar avatar-kiyansh"></span><span class="founder-avatar avatar-yuvaan"></span></span>
-            <span>2 young founders<br>from Nashik</span>
-          </div>
-          <div class="snapshot-pill pill-ideas"><span aria-hidden="true">✳ ✳ ✳</span> Ideas in action</div>
-          <div class="snapshot-banner-foot">
-            <p class="snapshot-motto">Not just a number.<br><span>A mindset in motion.</span></p>
-            <p class="snapshot-lede">Our platform is taking shape around young leadership and practical, planet-conscious ideas. Here is the current snapshot of what is featured.</p>
-          </div>
+      <div class="snapshot-banner">
+        <img class="snapshot-banner-blur" src="assets/snapshot-banner.jpg" alt="" aria-hidden="true" loading="lazy">
+        <span class="snapshot-kicker">02 / The snapshot</span>
+        <svg class="snapshot-doodle doodle-leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <svg class="snapshot-doodle doodle-ring" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        <h2 class="snapshot-title">A little momentum.<br><span>Lots of possibility.</span></h2>
+        <figure class="snapshot-photo">
+          <img src="assets/snapshot-banner.jpg" alt="Kiyansh Kapse and Yuvaan Kedare standing together behind their Goda Yuva and JalKiyan water models" loading="lazy">
+        </figure>
+        <div class="snapshot-pill pill-founders">
+          <span class="founder-avatars" aria-hidden="true"><span class="founder-avatar avatar-kiyansh"></span><span class="founder-avatar avatar-yuvaan"></span></span>
+          <span>2 young founders<br>from Nashik</span>
+        </div>
+        <div class="snapshot-pill pill-ideas"><span aria-hidden="true">✳ ✳ ✳</span> Ideas in action</div>
+        <div class="snapshot-banner-foot">
+          <p class="snapshot-motto">Not just a number.<br><span>A mindset in motion.</span></p>
+          <p class="snapshot-lede">Our platform is taking shape around young leadership and practical, planet-conscious ideas. Here is the current snapshot of what is featured.</p>
         </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="multi-impact-section section-pad" id="multi-impact" aria-label="Multi-Impact Core focus areas">
+      <div class="multi-impact-atmosphere" aria-hidden="true">
+        <span class="multi-impact-grain"></span>
+        <span class="multi-glow multi-glow-a"></span>
+        <span class="multi-glow multi-glow-b"></span>
+        <span class="multi-glow multi-glow-c"></span>
+        <svg class="multi-doodle multi-doodle-leaf" viewBox="0 0 64 64" fill="none"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <svg class="multi-doodle multi-doodle-ring" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        <svg class="multi-doodle multi-doodle-squiggle" viewBox="0 0 220 60" fill="none"><path d="M6 40c20-30 40-30 56 0s36 30 56 0 40-30 56 0 36 30 56 0" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+      </div>
       <div class="container">
         <div class="multi-impact-heading">
           <div>
@@ -234,26 +244,58 @@
         </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="snapshot-about-section section-pad">
+      <div class="snapshot-about-atmosphere" aria-hidden="true">
+        <span class="snap-about-glow snap-about-glow-a"></span>
+        <span class="snap-about-glow snap-about-glow-b"></span>
+        <svg class="snap-about-doodle snap-about-leaf" viewBox="0 0 64 64" fill="none"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <svg class="snap-about-doodle snap-about-ring" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
       <div class="container">
         <div class="snapshot-about">
-          <div>
+          <div class="snapshot-about-copy">
+            <span class="section-kicker snapshot-about-kicker">02 / THE SNAPSHOT</span>
             <h3>The <span>snapshot</span></h3>
             <p>Two young innovators, two thoughtful projects and four connected focus pillars. It is a small, honest picture of a forum that is just getting started in Nashik, built around ideas, learning and shared responsibility.</p>
+            <div class="snapshot-about-meta">
+              <div><strong>02</strong><span>Young founders</span></div>
+              <div><strong>02</strong><span>Live projects</span></div>
+              <div><strong>04</strong><span>Focus pillars</span></div>
+            </div>
           </div>
           <div class="snapshot-thumbs">
-            <img src="assets/jalkiyan-feature.webp" alt="Kiyansh explaining the JalKiyan water model" loading="lazy">
-            <img src="assets/goda-yuva-feature.webp" alt="Yuvaan presenting the Goda Yuva river-bed model" loading="lazy">
+            <figure class="snapshot-thumb">
+              <img src="assets/jalkiyan-feature.webp" alt="Kiyansh explaining the JalKiyan water model" loading="lazy">
+              <figcaption>JalKiyan · Water innovation</figcaption>
+            </figure>
+            <figure class="snapshot-thumb">
+              <img src="assets/goda-yuva-feature.webp" alt="Yuvaan presenting the Goda Yuva river-bed model" loading="lazy">
+              <figcaption>Goda Yuva · River health</figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="leaders-section section-pad" id="leaders">
+      <div class="leaders-atmosphere" aria-hidden="true">
+        <span class="leaders-glow leaders-glow-a"></span>
+        <span class="leaders-glow leaders-glow-b"></span>
+        <svg class="leaders-doodle leaders-doodle-leaf" viewBox="0 0 64 64" fill="none"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <svg class="leaders-doodle leaders-doodle-squiggle" viewBox="0 0 220 60" fill="none"><path d="M6 40c20-30 40-30 56 0s36 30 56 0 40-30 56 0 36 30 56 0" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+      </div>
       <div class="container leaders-intro">
-        <div><span class="section-kicker">03 / THE YOUNG LEADERS</span><h2>Small in age.<br><span class="green-italic">Big on ideas.</span></h2></div>
-        <div class="leaders-copy"><p class="lead-copy">Meet the young minds helping shape the NextGen spirit.</p><p>Our co-founders remind us that leadership begins with asking questions, caring about the world around us and having the courage to try.</p></div>
+        <div>
+          <span class="section-kicker leaders-kicker">03 / THE YOUNG LEADERS</span>
+          <h2>Small in age.<br><span>Big on ideas.</span></h2>
+        </div>
+        <div class="leaders-copy">
+          <p class="lead-copy">Meet the young minds helping shape the NextGen spirit.</p>
+          <p>Our co-founders remind us that leadership begins with asking questions, caring about the world around us and having the courage to try.</p>
+        </div>
       </div>
       <div class="container leader-grid">
         <article class="leader-card leader-card-kiyansh">
@@ -279,19 +321,33 @@
       </div>
       <div class="container leaders-note"><span class="note-flower" aria-hidden="true">✿</span><p>Leadership is not measured by age. It is revealed by curiosity, care and the willingness to take the first step.</p></div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="pillars-section section-pad" id="pillars">
+      <div class="pillars-atmosphere" aria-hidden="true">
+        <span class="pillars-glow pillars-glow-a"></span>
+        <span class="pillars-glow pillars-glow-b"></span>
+        <svg class="pillars-doodle pillars-doodle-leaf" viewBox="0 0 64 64" fill="none"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <svg class="pillars-doodle pillars-doodle-ring" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
       <div class="container">
-        <div class="pillars-heading"><div><span class="section-kicker">04 / THE IMPACT MATRIX</span><h2>Four ways to turn<br><span class="green-italic">ideas into action.</span></h2></div><p>Our impact framework brings together the themes already visible in our youth-led projects—connecting water, nature, learning and local problem-solving.</p></div>
+        <div class="pillars-heading">
+          <div>
+            <span class="section-kicker pillars-kicker">04 / THE IMPACT MATRIX</span>
+            <h2>Four ways to turn<br><span>ideas into action.</span></h2>
+          </div>
+          <p>Our impact framework brings together the themes already visible in our youth-led projects—connecting water, nature, learning and local problem-solving.</p>
+        </div>
         <div class="pillars-grid">
-          <article class="pillar-card pillar-water"><span class="pillar-index">PILLAR 01</span><div class="pillar-icon" aria-hidden="true">≈</div><h3>Water &<br>River Health</h3><p>Explore ideas that support cleaner water, healthier riverbeds and better water flow.</p><span class="pillar-arrow">↗</span></article>
+          <article class="pillar-card pillar-water"><span class="pillar-index">PILLAR 01</span><div class="pillar-icon" aria-hidden="true">≈</div><h3>Water &amp;<br>River Health</h3><p>Explore ideas that support cleaner water, healthier riverbeds and better water flow.</p><span class="pillar-arrow">↗</span></article>
           <article class="pillar-card pillar-ground"><span class="pillar-index">PILLAR 02</span><div class="pillar-icon" aria-hidden="true">↓</div><h3>Groundwater<br>Recharge</h3><p>Encourage awareness of water retention, recharge and responsible water thinking.</p><span class="pillar-arrow">↗</span></article>
-          <article class="pillar-card pillar-green"><span class="pillar-index">PILLAR 03</span><div class="pillar-icon" aria-hidden="true">✿</div><h3>Biodiversity &<br>Green Spaces</h3><p>Celebrate healthier natural spaces and the living systems that depend on them.</p><span class="pillar-arrow">↗</span></article>
+          <article class="pillar-card pillar-green"><span class="pillar-index">PILLAR 03</span><div class="pillar-icon" aria-hidden="true">✿</div><h3>Biodiversity &amp;<br>Green Spaces</h3><p>Celebrate healthier natural spaces and the living systems that depend on them.</p><span class="pillar-arrow">↗</span></article>
           <article class="pillar-card pillar-yellow"><span class="pillar-index">PILLAR 04</span><div class="pillar-icon" aria-hidden="true">✳</div><h3>Youth-Led<br>Innovation</h3><p>Give young people the confidence to question, prototype, communicate and collaborate.</p><span class="pillar-arrow">↗</span></article>
         </div>
         <div class="region-line"><span class="region-pin" aria-hidden="true">⌖</span><span>ROOTED IN NASHIK</span><span class="region-line-rule"></span><span>LOOKING ACROSS NORTH MAHARASHTRA</span></div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="guidance-section section-pad" id="guidance" aria-label="Guidance">
       <div class="container guidance-heading">
@@ -303,13 +359,14 @@
       </div>
       <div class="container guidance-gallery">
         <figure class="guidance-frame">
-          <img src="assets/dr-sonam-profile.jpg" alt="Profile of Dr. Sonam Kapse — social innovator, TEDx speaker, researcher and entrepreneur" loading="lazy">
+          <img src="assets/dr-sonam-profile.jpg?v=14" alt="Profile of Dr. Sonam Kapse — social innovator, TEDx speaker, researcher and entrepreneur" loading="lazy">
         </figure>
         <figure class="guidance-frame">
-          <img src="assets/dr-sonam-impact.jpg" alt="Creating Impact Across India — initiatives and awards led by Dr. Sonam Kapse" loading="lazy">
+          <img src="assets/dr-sonam-impact.jpg?v=14" alt="Creating Impact Across India — initiatives and awards led by Dr. Sonam Kapse" loading="lazy">
         </figure>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="initiatives-section section-pad" id="initiatives">
       <div class="container initiatives-heading"><div><span class="section-kicker">06 / THE INITIATIVES</span><h2>Meet the ideas<br>making <span class="green-italic">waves.</span></h2></div><p>Two young innovators. Two thoughtful concepts. A shared belief that local questions deserve creative attention.</p></div>
@@ -332,6 +389,7 @@
         </article>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="process-section section-pad" aria-label="How we grow ideas">
       <div class="container process-grid">
@@ -364,36 +422,85 @@
         </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="gallery-section section-pad" id="gallery">
-      <div class="container gallery-heading"><div><span class="section-kicker">08 / MOMENTS & MODELS</span><h2>Ideas are better<br><span class="green-italic">when shared.</span></h2></div><p>A closer look at the young innovators, their project models and the conversations behind each idea.</p></div>
+      <div class="container gallery-heading">
+        <div>
+          <span class="section-kicker gallery-kicker">08 / MOMENTS &amp; MODELS</span>
+          <h2>Ideas are better<br><span>when shared.</span></h2>
+        </div>
+        <p>A closer look at the young innovators, their project models and the conversations behind each idea.</p>
+      </div>
       <div class="container gallery-grid">
-        <button class="gallery-item gallery-item-tall" type="button" data-gallery="0" aria-label="Open Goda Yuva project photograph"><img src="assets/goda-yuva-showcase.webp" alt="Yuvaan presenting Goda Yuva at a project exhibition" loading="lazy"><span class="gallery-caption"><strong>Goda Yuva</strong><small>Keeping our rivers young</small></span><span class="gallery-open">↗</span></button>
-        <button class="gallery-item gallery-item-wide" type="button" data-gallery="1" aria-label="Open JalKiyan project photograph"><img src="assets/jalkiyan-showcase.webp" alt="Kiyansh discussing the JalKiyan water model with a visitor" loading="lazy"><span class="gallery-caption"><strong>JalKiyan</strong><small>Clean purposeful water</small></span><span class="gallery-open">↗</span></button>
-        <button class="gallery-item gallery-item-poster" type="button" data-gallery="2" aria-label="Open Goda Yuva project poster"><img src="assets/goda-yuva-poster.webp" alt="Goda Yuva project poster" loading="lazy"><span class="gallery-caption"><strong>The Goda Yuva concept</strong><small>Water flow · recharge · biodiversity</small></span><span class="gallery-open">↗</span></button>
-        <button class="gallery-item gallery-item-poster" type="button" data-gallery="3" aria-label="Open JalKiyan project poster"><img src="assets/jalkiyan-poster.webp" alt="JalKiyan project poster" loading="lazy"><span class="gallery-caption"><strong>The JalKiyan concept</strong><small>Water retention · riverbed health</small></span><span class="gallery-open">↗</span></button>
+        <button class="gallery-item gallery-item-tall" type="button" data-gallery="0" aria-label="Open Goda Yuva project photograph"><img src="assets/goda-yuva-showcase.webp" alt="Yuvaan presenting Goda Yuva at a project exhibition" loading="lazy"><span class="gallery-tag">Yuvaan Kedare</span><span class="gallery-caption"><strong>Goda Yuva</strong><small>Keeping our rivers young</small></span><span class="gallery-open">↗</span></button>
+        <button class="gallery-item gallery-item-wide" type="button" data-gallery="1" aria-label="Open JalKiyan project photograph"><img src="assets/jalkiyan-showcase.webp" alt="Kiyansh discussing the JalKiyan water model with a visitor" loading="lazy"><span class="gallery-tag">Kiyansh Kapse</span><span class="gallery-caption"><strong>JalKiyan</strong><small>Clean purposeful water</small></span><span class="gallery-open">↗</span></button>
+        <button class="gallery-item gallery-item-poster" type="button" data-gallery="2" aria-label="Open Goda Yuva project poster"><img src="assets/goda-yuva-poster.webp" alt="Goda Yuva project poster" loading="lazy"><span class="gallery-tag">Concept board</span><span class="gallery-caption"><strong>The Goda Yuva concept</strong><small>Water flow · recharge · biodiversity</small></span><span class="gallery-open">↗</span></button>
+        <button class="gallery-item gallery-item-poster" type="button" data-gallery="3" aria-label="Open JalKiyan project poster"><img src="assets/jalkiyan-poster.webp" alt="JalKiyan project poster" loading="lazy"><span class="gallery-tag">Concept board</span><span class="gallery-caption"><strong>The JalKiyan concept</strong><small>Water retention · riverbed health</small></span><span class="gallery-open">↗</span></button>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="global-section section-pad" id="global">
+      <div class="global-atmosphere" aria-hidden="true">
+        <span class="global-glow global-glow-a"></span>
+        <span class="global-glow global-glow-b"></span>
+        <svg class="global-doodle global-doodle-ring" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="4"/><path d="M10 32h44M32 10c8 8 8 36 0 44M32 10c-8 8-8 36 0 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        <svg class="global-doodle global-doodle-leaf" viewBox="0 0 64 64" fill="none"><path d="M32 52V30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M32 34C19 34 12 26 12 14c12 0 20 6 20 20Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M32 29c0-12 8-19 20-19 0 12-8 20-20 19Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+      </div>
       <div class="container global-grid">
-        <div class="global-copy"><span class="section-kicker section-kicker-light">09 / GLOBAL ENGAGEMENT</span><h2>Local ideas.<br><span>Global goals.</span></h2><p>Our focus areas connect with themes found in the United Nations Sustainable Development Goals. These connections offer a shared language for learning and action—not a claim of UN affiliation or endorsement.</p><a class="button button-white" href="#resources">Explore our resource hub <span>↗</span></a></div>
-        <div class="sdg-panel"><div class="sdg-panel-top"><span>THEMES WE ALIGN WITH</span><span class="sdg-spark">✳</span></div><div class="sdg-list">
-          <div class="sdg-item"><span class="sdg-number sdg-4">04</span><div><strong>Quality Education</strong><small>Learning, creativity and youth participation</small></div><span class="sdg-check">↗</span></div>
-          <div class="sdg-item"><span class="sdg-number sdg-6">06</span><div><strong>Clean Water & Sanitation</strong><small>Water stewardship and healthier water systems</small></div><span class="sdg-check">↗</span></div>
-          <div class="sdg-item"><span class="sdg-number sdg-15">15</span><div><strong>Life on Land</strong><small>Biodiversity and healthier natural spaces</small></div><span class="sdg-check">↗</span></div>
-        </div><p class="sdg-footnote">The SDG references are thematic alignments only. NextGen Impact Labs is not presented as a UN body or official UN partner.</p></div>
+        <div class="global-copy">
+          <span class="section-kicker section-kicker-light">09 / GLOBAL ENGAGEMENT</span>
+          <h2>Local ideas.<br><span>Global goals.</span></h2>
+          <p>Our focus areas connect with themes found in the United Nations Sustainable Development Goals. These connections offer a shared language for learning and action—not a claim of UN affiliation or endorsement.</p>
+          <a class="button button-white" href="#resources">Explore our resource hub <span>↗</span></a>
+        </div>
+        <div class="sdg-panel">
+          <div class="sdg-panel-top"><span>THEMES WE ALIGN WITH</span><span class="sdg-spark">✳</span></div>
+          <div class="sdg-list">
+            <div class="sdg-item"><span class="sdg-number sdg-4">04</span><div><strong>Quality Education</strong><small>Learning, creativity and youth participation</small></div><span class="sdg-check">↗</span></div>
+            <div class="sdg-item"><span class="sdg-number sdg-6">06</span><div><strong>Clean Water & Sanitation</strong><small>Water stewardship and healthier water systems</small></div><span class="sdg-check">↗</span></div>
+            <div class="sdg-item"><span class="sdg-number sdg-15">15</span><div><strong>Life on Land</strong><small>Biodiversity and healthier natural spaces</small></div><span class="sdg-check">↗</span></div>
+          </div>
+          <p class="sdg-footnote">The SDG references are thematic alignments only. NextGen Impact Labs is not presented as a UN body or official UN partner.</p>
+        </div>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="resources-section section-pad" id="resources">
-      <div class="container resources-heading"><div><span class="section-kicker">10 / TRANSPARENCY & DATA HUB</span><h2>Open ideas.<br><span class="green-italic">Clear information.</span></h2></div><p>As the forum grows, this space will bring together the documents, data and stories that help everyone follow the work.</p></div>
+      <div class="container resources-heading">
+        <div>
+          <span class="section-kicker resources-kicker">10 / TRANSPARENCY &amp; DATA HUB</span>
+          <h2>Open ideas.<br><span>Clear information.</span></h2>
+        </div>
+        <p>As the forum grows, this space will bring together the documents, data and stories that help everyone follow the work.</p>
+      </div>
       <div class="container resources-grid">
-        <article class="resource-card resource-report"><div class="resource-icon">▤</div><span class="resource-label">DOCUMENTS</span><h3>Annual Reports</h3><p>Updates, reflections and organisational reports will be published here when available.</p><span class="resource-status">PUBLISHING SOON</span></article>
-        <article class="resource-card resource-data"><div class="resource-icon">⌘</div><span class="resource-label">OPEN INFORMATION</span><h3>Open Datasets</h3><p>Relevant project information and verified datasets will be shared transparently as they are prepared.</p><span class="resource-status">PUBLISHING SOON</span></article>
-        <article class="resource-card resource-gallery"><div class="resource-icon">▧</div><span class="resource-label">VISUAL STORIES</span><h3>Project Gallery</h3><p>Explore the people, prototypes and moments behind the ideas being shared.</p><a class="resource-link" href="#gallery">Explore the gallery <span>↗</span></a></article>
+        <article class="resource-card resource-report">
+          <div class="resource-icon">▤</div>
+          <span class="resource-label">DOCUMENTS</span>
+          <h3>Annual Reports</h3>
+          <p>Updates, reflections and organisational reports will be published here when available.</p>
+          <span class="resource-status">PUBLISHING SOON</span>
+        </article>
+        <article class="resource-card resource-data">
+          <div class="resource-icon">⌘</div>
+          <span class="resource-label">OPEN INFORMATION</span>
+          <h3>Open Datasets</h3>
+          <p>Relevant project information and verified datasets will be shared transparently as they are prepared.</p>
+          <span class="resource-status">PUBLISHING SOON</span>
+        </article>
+        <article class="resource-card resource-gallery">
+          <div class="resource-icon">▧</div>
+          <span class="resource-label">VISUAL STORIES</span>
+          <h3>Project Gallery</h3>
+          <p>Explore the people, prototypes and moments behind the ideas being shared.</p>
+          <a class="resource-link" href="#gallery">Explore the gallery <span>↗</span></a>
+        </article>
       </div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="press-partner-section section-pad" id="partner">
       <div class="container press-partner-grid">
@@ -402,10 +509,12 @@
       </div>
       <div class="container partner-note" id="partner-note"><span class="partner-note-icon">✳</span><div><strong>Have a meaningful idea to share?</strong><p>Official contact details and partner enquiry channels can be added here before the website goes live.</p></div><span class="partner-note-status">CONTACT DETAILS TO BE ADDED</span></div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
 
     <section class="closing-section">
-      <div class="container closing-inner"><span class="closing-spark" aria-hidden="true">✳</span><p>THE FUTURE IS NOT JUST SOMETHING WE WAIT FOR.</p><h2>It’s something<br><em>we build together.</em></h2><a href="#top" class="button button-dark">Back to the beginning <span>↑</span></a><span class="closing-orbit orbit-a"></span><span class="closing-orbit orbit-b"></span></div>
+      <div class="container closing-inner"><span class="closing-spark" aria-hidden="true">✳</span><p>THE FUTURE IS NOT JUST SOMETHING WE WAIT FOR.</p><h2>It’s something<br><em>we build together.</em></h2><a href="#top" class="button button-dark">Back to the beginning <span>↑</span></a></div>
     </section>
+    <hr class="slide-edge" aria-hidden="true">
   </main>
 
   <footer class="site-footer">
